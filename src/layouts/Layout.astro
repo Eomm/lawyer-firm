@@ -1,0 +1,91 @@
+---
+import { type Language } from '@/i18n';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang: Language;
+  currentPath?: string;
+}
+
+const { title, description, lang, currentPath = '' } = Astro.props;
+
+const siteUrl = 'https://studiolegaleferrini.com';
+const fullUrl = `${siteUrl}${currentPath}`;
+
+// Structured data for LocalBusiness
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Studio Legale Ferrini",
+  "description": "Professional legal services in Rimini, Italy. Specialized in civil law, commercial law, and family law.",
+  "url": siteUrl,
+  "telephone": "+39 0541 123456",
+  "email": "info@studiolegaleferrini.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Roma 123",
+    "addressLocality": "Rimini",
+    "postalCode": "47921",
+    "addressRegion": "RN",
+    "addressCountry": "IT"
+  },
+  "openingHours": [
+    "Mo-Fr 09:00-18:00",
+    "Sa 09:00-13:00"
+  ],
+  "areaServed": "Emilia-Romagna, Italy",
+  "founder": {
+    "@type": "Person",
+    "name": "Luca Ferrini"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={fullUrl} />
+    
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/en${currentPath.replace('/en', '').replace('/it', '')}`} />
+    <link rel="alternate" hreflang="it" href={`${siteUrl}/it${currentPath.replace('/en', '').replace('/it', '')}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/it${currentPath.replace('/en', '').replace('/it', '')}`} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}/images/og-image.jpg`} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'it_IT'} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}/images/og-image.jpg`} />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+  </body>
+</html>
