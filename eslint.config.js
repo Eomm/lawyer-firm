@@ -73,6 +73,14 @@ export default [
   // Configuration files
   {
     files: ['**/*.config.{js,mjs,cjs,ts}'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        Buffer: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
+    },
     rules: {
       'no-console': 'off',
       '@typescript-eslint/no-var-requires': 'off',

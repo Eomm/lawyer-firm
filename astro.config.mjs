@@ -2,8 +2,16 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+// Check if we're in GitHub Actions environment for site URL
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const site = isGitHubActions 
+  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${process.env.GITHUB_REPOSITORY?.split('/')[1] || ''}`
+  : 'https://studiolegaleferrini.com';
+
 // https://astro.build/config
 export default defineConfig({
+  site,
+
   integrations: [
     sitemap({
       i18n: {
@@ -16,14 +24,12 @@ export default defineConfig({
     }),
   ],
 
-  site: 'https://studiolegaleferrini.com',
-
   build: {
     format: 'file',
   },
 
   image: {
-    domains: ['studiolegaleferrini.com'],
+    domains: ['studiolegaleferrini.com', 'github.io'],
     formats: ['webp', 'avif'],
   },
 
