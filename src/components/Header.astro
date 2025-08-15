@@ -9,17 +9,18 @@ export interface Props {
 
 const { lang, currentPath = '' } = Astro.props;
 const t = getTranslations(lang);
+const baseUrl = import.meta.env.BASE_URL || '';
 
 const navItems = [
-  { href: `/${lang}`, label: t.nav.home },
-  { href: `/${lang}/team`, label: t.nav.team },
-  { href: `/${lang}/faq`, label: t.nav.faq },
-  { href: `/${lang}/contact`, label: t.nav.contact },
-  { href: `/${lang}/where-we-are`, label: t.nav.whereWeAre },
+  { href: `${baseUrl}${lang}`, label: t.nav.home },
+  { href: `${baseUrl}${lang}/team`, label: t.nav.team },
+  { href: `${baseUrl}${lang}/faq`, label: t.nav.faq },
+  { href: `${baseUrl}${lang}/contact`, label: t.nav.contact },
+  { href: `${baseUrl}${lang}/where-we-are`, label: t.nav.whereWeAre },
 ];
 
 const otherLang = lang === 'en' ? 'it' : 'en';
-const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${otherLang}`;
+const langSwitchPath = currentPath.replace(`/${lang}`, `${baseUrl}${otherLang}`) || `${baseUrl}${otherLang}`;
 ---
 
 <header class="bg-white shadow-lg sticky top-0 z-50">
@@ -27,9 +28,9 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href={`/${lang}`} class="flex items-center space-x-3">
-          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="Studio Legale Ferrini Logo" class="h-20 w-20" />
-          <!-- <span class="text-xl font-bold text-navy">Studio Legale Ferrini</span> -->
+        <a href={`${baseUrl}${lang}`} class="flex items-center space-x-3">
+          <img src={`${baseUrl}logo.svg`} alt="Studio Legale Ferrini Logo" class="h-20 w-20" />
+          <span class="text-xl font-bold text-navy">Studio Legale Ferrini</span>
         </a>
       </div>
 
@@ -64,7 +65,7 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
           {otherLang.toUpperCase()}
         </a>
         <a
-          href={`/${lang}/contact`}
+          href={`${baseUrl}${lang}/contact`}
           class="bg-gold text-navy px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors duration-200"
         >
           {t.common.bookConsultation}
@@ -141,7 +142,7 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
             {otherLang.toUpperCase()}
           </a>
           <a
-            href={`/${lang}/contact`}
+            href={`${baseUrl}${lang}/contact`}
             class="bg-gold text-navy px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors duration-200"
           >
             {t.common.bookConsultation}

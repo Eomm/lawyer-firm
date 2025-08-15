@@ -18,6 +18,7 @@ export async function getStaticPaths() {
 const { lang, member } = Astro.params as { lang: Language; member: string };
 const t = getTranslations(lang);
 const currentPath = `/${lang}/team/${member}`;
+const baseUrl = import.meta.env.BASE_URL || '';
 
 // Get member data
 const memberData = {
@@ -29,7 +30,7 @@ const memberData = {
     specializations: t.team.members.luca.specializations,
     education: t.team.members.luca.education,
     admissions: t.team.members.luca.admissions,
-    image: `${import.meta.env.BASE_URL}images/luca-ferrini.jpg`,
+    image: `${baseUrl}images/luca-ferrini.jpg`,
   },
   'giordana-pasini': {
     name: t.team.members.giordana.name,
@@ -39,7 +40,7 @@ const memberData = {
     specializations: t.team.members.giordana.specializations,
     education: t.team.members.giordana.education,
     admissions: t.team.members.giordana.admissions,
-    image: `${import.meta.env.BASE_URL}images/giordana-pasini.jpg`,
+    image: `${baseUrl}images/giordana-pasini.jpg`,
   },
   'vanessa-maraldi': {
     name: t.team.members.vanessa.name,
@@ -49,7 +50,7 @@ const memberData = {
     specializations: t.team.members.vanessa.specializations,
     education: t.team.members.vanessa.education,
     admissions: t.team.members.vanessa.admissions,
-    image: `${import.meta.env.BASE_URL}images/vanessa-maraldi.jpg`,
+    image: `${baseUrl}images/vanessa-maraldi.jpg`,
   },
 };
 
