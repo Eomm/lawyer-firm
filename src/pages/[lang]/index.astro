@@ -16,7 +16,17 @@ const currentPath = `/${lang}`;
 
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32">
+    <section class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32 overflow-hidden">
+      <!-- Background Image with Fade Effect -->
+      <div class="absolute inset-0">
+        <img 
+          src="/images/gustice.avif" 
+          alt="" 
+          class="absolute -top-30 left-0 w-full h-[calc(100%+120px)] object-cover object-left-top opacity-40"
+          aria-hidden="true"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-navy/20 via-navy/60 to-navy/95"></div>
+      </div>
       <div class="absolute inset-0 bg-black opacity-10"></div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
