@@ -1,12 +1,12 @@
 ---
-import { getTranslations, type Language } from '@/i18n';
+import { getTranslations, type Language } from "@/i18n";
 
 export interface Props {
   lang: Language;
   currentPath?: string;
 }
 
-const { lang, currentPath = '' } = Astro.props;
+const { lang, currentPath = "" } = Astro.props;
 const t = getTranslations(lang);
 
 const navItems = [
@@ -14,39 +14,50 @@ const navItems = [
   { href: `/${lang}/team`, label: t.nav.team },
   { href: `/${lang}/faq`, label: t.nav.faq },
   { href: `/${lang}/contact`, label: t.nav.contact },
-  { href: `/${lang}/where-we-are`, label: t.nav.whereWeAre }
+  { href: `/${lang}/where-we-are`, label: t.nav.whereWeAre },
 ];
 
-const otherLang = lang === 'en' ? 'it' : 'en';
-const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${otherLang}`;
+const otherLang = lang === "en" ? "it" : "en";
+const langSwitchPath =
+  currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${otherLang}`;
 ---
 
 <header class="bg-white shadow-lg sticky top-0 z-50">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+  <nav
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    aria-label="Main navigation"
+  >
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href={`/${lang}`} class="text-xl font-bold text-navy">
-          Studio Legale Ferrini
+        <a href={`/${lang}`} class="flex items-center space-x-3">
+          <img
+            src="/logo.svg"
+            alt="Studio Legale Ferrini Logo"
+            class="h-20 w-20"
+          />
+          <!-- <span class="text-xl font-bold text-navy">Studio Legale Ferrini</span> -->
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
-          {navItems.map((item) => (
-            <a
-              href={item.href}
-              class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                currentPath === item.href
-                  ? 'bg-navy text-white'
-                  : 'text-navy hover:bg-navy hover:text-white'
-              }`}
-              aria-current={currentPath === item.href ? 'page' : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
+          {
+            navItems.map((item) => (
+              <a
+                href={item.href}
+                class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  currentPath === item.href
+                    ? "bg-navy text-white"
+                    : "text-navy hover:bg-navy hover:text-white"
+                }`}
+                aria-current={currentPath === item.href ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
         </div>
       </div>
 
@@ -77,12 +88,34 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
         >
           <span class="sr-only">Open main menu</span>
           <!-- Menu icon -->
-          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
           <!-- Close icon (hidden by default) -->
-          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg
+            class="hidden h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -91,19 +124,21 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
     <!-- Mobile menu -->
     <div class="mobile-menu hidden md:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-              currentPath === item.href
-                ? 'bg-navy text-white'
-                : 'text-navy hover:bg-navy hover:text-white'
-            }`}
-            aria-current={currentPath === item.href ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                currentPath === item.href
+                  ? "bg-navy text-white"
+                  : "text-navy hover:bg-navy hover:text-white"
+              }`}
+              aria-current={currentPath === item.href ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
         <div class="border-t pt-3 mt-3 flex justify-between items-center">
           <a
             href={langSwitchPath}
@@ -126,19 +161,20 @@ const langSwitchPath = currentPath.replace(`/${lang}`, `/${otherLang}`) || `/${o
 
 <script>
   // Mobile menu toggle
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuIcon = mobileMenuButton?.querySelector('svg:first-child');
-    const closeIcon = mobileMenuButton?.querySelector('svg:last-child');
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.querySelector(".mobile-menu-button");
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const menuIcon = mobileMenuButton?.querySelector("svg:first-child");
+    const closeIcon = mobileMenuButton?.querySelector("svg:last-child");
 
-    mobileMenuButton?.addEventListener('click', function() {
-      const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-      
-      mobileMenuButton.setAttribute('aria-expanded', (!isExpanded).toString());
-      mobileMenu?.classList.toggle('hidden');
-      menuIcon?.classList.toggle('hidden');
-      closeIcon?.classList.toggle('hidden');
+    mobileMenuButton?.addEventListener("click", function () {
+      const isExpanded =
+        mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+      mobileMenuButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      mobileMenu?.classList.toggle("hidden");
+      menuIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
     });
   });
 </script>
