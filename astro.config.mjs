@@ -4,13 +4,16 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Check if we're in GitHub Actions environment for site URL
 const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
 const site = isGitHubActions 
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${process.env.GITHUB_REPOSITORY?.split('/')[1] || ''}`
+  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
   : 'https://studiolegaleferrini.com';
+const base = isGitHubActions ? `/${repoName}/` : undefined;
 
 // https://astro.build/config
 export default defineConfig({
   site,
+  base,
 
   integrations: [
     sitemap({
