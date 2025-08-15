@@ -16,28 +16,28 @@ const teamMembers = [
     name: t.team.members.luca.name,
     title: t.team.members.luca.title,
     bio: t.team.members.luca.bio,
-    image: '/images/luca-ferrini.jpg'
+    image: '/images/luca-ferrini.jpg',
   },
   {
-    id: 'giordana-pasini', 
+    id: 'giordana-pasini',
     name: t.team.members.giordana.name,
     title: t.team.members.giordana.title,
     bio: t.team.members.giordana.bio,
-    image: '/images/giordana-pasini.jpg'
+    image: '/images/giordana-pasini.jpg',
   },
   {
     id: 'vanessa-maraldi',
     name: t.team.members.vanessa.name,
     title: t.team.members.vanessa.title,
     bio: t.team.members.vanessa.bio,
-    image: '/images/vanessa-maraldi.jpg'
-  }
+    image: '/images/vanessa-maraldi.jpg',
+  },
 ];
 ---
 
 <Layout title={t.team.title} description={t.team.description} lang={lang} currentPath={currentPath}>
   <Header lang={lang} currentPath={currentPath} />
-  
+
   <main>
     <!-- Hero Section -->
     <section class="py-20 bg-gradient-to-br from-navy to-navy-light text-white">
@@ -55,32 +55,38 @@ const teamMembers = [
     <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {teamMembers.map((member) => (
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div class="aspect-w-1 aspect-h-1 bg-gray-200">
-                <img 
-                  src={member.image}
-                  alt={member.name}
-                  class="w-full h-80 object-cover"
-                  loading="lazy"
-                />
+          {
+            teamMembers.map(member => (
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-80 object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-8">
+                  <h3 class="text-2xl font-bold text-navy mb-2">{member.name}</h3>
+                  <p class="text-gold font-semibold mb-4">{member.title}</p>
+                  <p class="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
+                  <a
+                    href={`/${lang}/team/${member.id}`}
+                    class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
+                  >
+                    {t.common.readMore}
+                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <div class="p-8">
-                <h3 class="text-2xl font-bold text-navy mb-2">{member.name}</h3>
-                <p class="text-gold font-semibold mb-4">{member.title}</p>
-                <p class="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
-                <a 
-                  href={`/${lang}/team/${member.id}`}
-                  class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
-                >
-                  {t.common.readMore}
-                  <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </section>
@@ -92,12 +98,13 @@ const teamMembers = [
           {lang === 'en' ? 'Need Legal Assistance?' : 'Hai Bisogno di Assistenza Legale?'}
         </h2>
         <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-          {lang === 'en' 
-            ? 'Our experienced team is ready to help you with your legal needs.'
-            : 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.'
+          {
+            lang === 'en'
+              ? 'Our experienced team is ready to help you with your legal needs.'
+              : 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.'
           }
         </p>
-        <a 
+        <a
           href={`/${lang}/contact`}
           class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
         >

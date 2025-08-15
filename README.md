@@ -52,23 +52,26 @@ public/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
 
 4. Build for production:
+
    ```bash
    npm run build
    ```
@@ -136,7 +139,7 @@ The website supports English and Italian through:
 Place team member photos in `public/images/`:
 
 - `luca-ferrini.jpg` - Luca Ferrini photo
-- `giordana-pasini.jpg` - Giordana Pasini photo  
+- `giordana-pasini.jpg` - Giordana Pasini photo
 - `vanessa-maraldi.jpg` - Vanessa Maraldi photo
 - `og-image.jpg` - Social media sharing image
 
@@ -145,6 +148,7 @@ Images are automatically optimized by Astro's built-in image service.
 ## 📞 Contact Information
 
 Update contact details in:
+
 - `src/i18n/en.ts` and `src/i18n/it.ts` - For displayed text
 - `src/layouts/Layout.astro` - For structured data
 - `src/components/Footer.astro` - For footer contact info

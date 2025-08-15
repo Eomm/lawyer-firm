@@ -1,49 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Legale Ferrini - Professional Legal Services</title>
+    <meta
+      name="description"
+      content="Professional legal services in Rimini, Italy. Specialized in civil law, commercial law, and family law."
+    />
+    <script>
+      // Detect user language preference
+      function detectLanguage() {
+        // Check if user has a language preference stored
+        const stored = localStorage.getItem('preferredLanguage');
+        if (stored && (stored === 'en' || stored === 'it')) {
+          return stored;
+        }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio Legale Ferrini - Professional Legal Services</title>
-  <meta name="description"
-    content="Professional legal services in Rimini, Italy. Specialized in civil law, commercial law, and family law.">
-  <script>
-    // Detect user language preference
-    function detectLanguage () {
-      // Check if user has a language preference stored
-      const stored = localStorage.getItem('preferredLanguage');
-      if (stored && (stored === 'en' || stored === 'it')) {
-        return stored;
-      }
+        // Check browser language
+        const browserLang = navigator.language || navigator.languages[0];
 
-      // Check browser language
-      const browserLang = navigator.language || navigator.languages[0];
+        if (browserLang.startsWith('it')) {
+          return 'it';
+        } else if (browserLang.startsWith('en')) {
+          return 'en';
+        }
 
-      if (browserLang.startsWith('it')) {
+        // Default to Italian
         return 'it';
-      } else if (browserLang.startsWith('en')) {
-        return 'en';
       }
 
-      // Default to Italian
-      return 'it';
-    }
+      // Redirect to appropriate language
+      const lang = detectLanguage();
+      localStorage.setItem('preferredLanguage', lang);
+      window.location.replace('/' + lang + '/');
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/it/" />
+    </noscript>
+  </head>
 
-    // Redirect to appropriate language
-    const lang = detectLanguage();
-    localStorage.setItem('preferredLanguage', lang);
-    window.location.replace('/' + lang + '/');
-  </script>
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=/it/" />
-  </noscript>
-</head>
-
-<body>
-  <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-    <h1>Redirecting...</h1>
-    <p>If you are not redirected automatically, <a href="/it/">click here</a>.</p>
-  </div>
-</body>
-
+  <body>
+    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif">
+      <h1>Redirecting...</h1>
+      <p>If you are not redirected automatically, <a href="/it/">click here</a>.</p>
+    </div>
+  </body>
 </html>

@@ -13,7 +13,7 @@ const currentPath = `/${lang}`;
 
 <Layout title={t.home.title} description={t.home.description} lang={lang} currentPath={currentPath}>
   <Header lang={lang} currentPath={currentPath} />
-  
+
   <main>
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32">
@@ -26,7 +26,7 @@ const currentPath = `/${lang}`;
           <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
             {t.home.hero.subtitle}
           </p>
-          <a 
+          <a
             href={`/${lang}/contact`}
             class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
           >
@@ -44,14 +44,19 @@ const currentPath = `/${lang}`;
             {t.home.services.title}
           </h2>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Civil Law -->
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold"
+          >
             <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2L3 7v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7l-7-5zM10 4.236L6 7.528V18h8V7.528L10 4.236z" clip-rule="evenodd"/>
-                <path d="M7 11h6v2H7v-2zm0 3h6v2H7v-2z"/>
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2L3 7v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V7l-7-5zM10 4.236L6 7.528V18h8V7.528L10 4.236z"
+                  clip-rule="evenodd"></path>
+                <path d="M7 11h6v2H7v-2zm0 3h6v2H7v-2z"></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.services.civil.title}</h3>
@@ -59,10 +64,14 @@ const currentPath = `/${lang}`;
           </div>
 
           <!-- Commercial Law -->
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold"
+          >
             <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6zm2 2h4v2H8V6zm0 3h4v2H8V9zm0 3h4v2H8v-2z"/>
+                <path
+                  d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v12h8V4H6zm2 2h4v2H8V6zm0 3h4v2H8V9zm0 3h4v2H8v-2z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.services.commercial.title}</h3>
@@ -70,10 +79,12 @@ const currentPath = `/${lang}`;
           </div>
 
           <!-- Family Law -->
-          <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold"
+          >
             <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-6">
               <svg class="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.services.family.title}</h3>
@@ -91,30 +102,44 @@ const currentPath = `/${lang}`;
             {t.home.about.title}
           </h2>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div class="p-6">
-            <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+            <div
+              class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
               <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.about.experience}</h3>
           </div>
-          
+
           <div class="p-6">
-            <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+            <div
+              class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
               <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                <path
+                  d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.about.personalized}</h3>
           </div>
-          
+
           <div class="p-6">
-            <div class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+            <div
+              class="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6"
+            >
               <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                <path
+                  fill-rule="evenodd"
+                  d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                  clip-rule="evenodd"></path>
               </svg>
             </div>
             <h3 class="text-xl font-bold text-navy mb-4">{t.home.about.results}</h3>
@@ -130,19 +155,20 @@ const currentPath = `/${lang}`;
           {lang === 'en' ? 'Ready to Get Started?' : 'Pronto per Iniziare?'}
         </h2>
         <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-          {lang === 'en' 
-            ? 'Contact us today for a consultation with our experienced legal team.'
-            : 'Contattaci oggi per una consulenza con il nostro team legale esperto.'
+          {
+            lang === 'en'
+              ? 'Contact us today for a consultation with our experienced legal team.'
+              : 'Contattaci oggi per una consulenza con il nostro team legale esperto.'
           }
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
+          <a
             href={`/${lang}/contact`}
             class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
           >
             {t.common.bookConsultation}
           </a>
-          <a 
+          <a
             href={`tel:+390541123456`}
             class="inline-block border-2 border-gold text-gold px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold hover:text-navy transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
           >

@@ -17,11 +17,13 @@ Please replace these placeholder images with professional photos of the team mem
 ## Placeholder Images
 
 For development purposes, you can use placeholder services like:
+
 - https://picsum.photos/800/800 (for square images)
 - https://via.placeholder.com/800x800
 
 ## Example URLs for placeholders:
+
 - Luca Ferrini: https://picsum.photos/800/800?random=1
-- Giordana Pasini: https://picsum.photos/800/800?random=2  
+- Giordana Pasini: https://picsum.photos/800/800?random=2
 - Vanessa Maraldi: https://picsum.photos/800/800?random=3
 - OG Image: https://picsum.photos/1200/630?random=4

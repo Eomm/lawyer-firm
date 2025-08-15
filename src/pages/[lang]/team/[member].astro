@@ -7,10 +7,10 @@ import { getTranslations, type Language } from '@/i18n';
 export async function getStaticPaths() {
   const members = ['luca-ferrini', 'giordana-pasini', 'vanessa-maraldi'];
   const languages = ['en', 'it'];
-  
-  return languages.flatMap(lang => 
+
+  return languages.flatMap(lang =>
     members.map(member => ({
-      params: { lang, member }
+      params: { lang, member },
     }))
   );
 }
@@ -29,7 +29,7 @@ const memberData = {
     specializations: t.team.members.luca.specializations,
     education: t.team.members.luca.education,
     admissions: t.team.members.luca.admissions,
-    image: '/images/luca-ferrini.jpg'
+    image: '/images/luca-ferrini.jpg',
   },
   'giordana-pasini': {
     name: t.team.members.giordana.name,
@@ -39,7 +39,7 @@ const memberData = {
     specializations: t.team.members.giordana.specializations,
     education: t.team.members.giordana.education,
     admissions: t.team.members.giordana.admissions,
-    image: '/images/giordana-pasini.jpg'
+    image: '/images/giordana-pasini.jpg',
   },
   'vanessa-maraldi': {
     name: t.team.members.vanessa.name,
@@ -49,8 +49,8 @@ const memberData = {
     specializations: t.team.members.vanessa.specializations,
     education: t.team.members.vanessa.education,
     admissions: t.team.members.vanessa.admissions,
-    image: '/images/vanessa-maraldi.jpg'
-  }
+    image: '/images/vanessa-maraldi.jpg',
+  },
 };
 
 const currentMember = memberData[member as keyof typeof memberData];
@@ -60,7 +60,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
 
 <Layout title={pageTitle} description={pageDescription} lang={lang} currentPath={currentPath}>
   <Header lang={lang} currentPath={currentPath} />
-  
+
   <main>
     <!-- Breadcrumb -->
     <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
@@ -73,7 +73,10 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
           </li>
           <li class="text-gray-400">/</li>
           <li>
-            <a href={`/${lang}/team`} class="text-navy hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}/team`}
+              class="text-navy hover:text-gold transition-colors duration-200"
+            >
               {t.nav.team}
             </a>
           </li>
@@ -90,7 +93,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
           <!-- Photo -->
           <div class="lg:col-span-1">
             <div class="sticky top-8">
-              <img 
+              <img
                 src={currentMember.image}
                 alt={currentMember.name}
                 class="w-full rounded-xl shadow-lg"
@@ -102,19 +105,37 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 </h3>
                 <div class="space-y-3 text-sm">
                   <div class="flex items-center">
-                    <svg class="w-4 h-4 mr-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    <svg
+                      class="w-4 h-4 mr-3 text-gold flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+                      ></path>
                     </svg>
-                    <a href="tel:+390541123456" class="text-navy hover:text-gold transition-colors duration-200">
+                    <a
+                      href="tel:+390541123456"
+                      class="text-navy hover:text-gold transition-colors duration-200"
+                    >
                       +39 0541 123456
                     </a>
                   </div>
                   <div class="flex items-center">
-                    <svg class="w-4 h-4 mr-3 text-gold flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <svg
+                      class="w-4 h-4 mr-3 text-gold flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                      ></path>
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                     </svg>
-                    <a href="mailto:info@studiolegaleferrini.com" class="text-navy hover:text-gold transition-colors duration-200">
+                    <a
+                      href="mailto:info@studiolegaleferrini.com"
+                      class="text-navy hover:text-gold transition-colors duration-200"
+                    >
                       info@studiolegaleferrini.com
                     </a>
                   </div>
@@ -162,7 +183,11 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
             <!-- Admissions -->
             <div class="mb-12">
               <h3 class="text-2xl font-bold text-navy mb-4">
-                {lang === 'en' ? 'Bar Admissions & Certifications' : 'Iscrizioni all\'Albo e Certificazioni'}
+                {
+                  lang === 'en'
+                    ? 'Bar Admissions & Certifications'
+                    : "Iscrizioni all'Albo e Certificazioni"
+                }
               </h3>
               <p class="text-gray-700">
                 {currentMember.admissions}
@@ -175,12 +200,13 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 {lang === 'en' ? 'Get in Touch' : 'Contatta'}
               </h3>
               <p class="text-gray-600 mb-6">
-                {lang === 'en' 
-                  ? `Schedule a consultation with ${currentMember.name} to discuss your legal needs.`
-                  : `Prenota una consulenza con ${currentMember.name} per discutere delle tue esigenze legali.`
+                {
+                  lang === 'en'
+                    ? `Schedule a consultation with ${currentMember.name} to discuss your legal needs.`
+                    : `Prenota una consulenza con ${currentMember.name} per discutere delle tue esigenze legali.`
                 }
               </p>
-              <a 
+              <a
                 href={`/${lang}/contact`}
                 class="inline-block bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
               >
@@ -195,12 +221,15 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
     <!-- Back to Team -->
     <section class="py-12 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <a 
+        <a
           href={`/${lang}/team`}
           class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
         >
           <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>
+            <path
+              fill-rule="evenodd"
+              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+              clip-rule="evenodd"></path>
           </svg>
           {lang === 'en' ? 'Back to Team' : 'Torna al Team'}
         </a>

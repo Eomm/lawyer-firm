@@ -92,19 +92,16 @@
 ## 🎯 Next Steps for Deployment
 
 1. **Replace placeholder images** with professional photos:
-
    - `public/images/luca-ferrini.jpg`
    - `public/images/giordana-pasini.jpg`
    - `public/images/vanessa-maraldi.jpg`
    - `public/images/og-image.jpg`
 
 2. **Update contact information** if needed in:
-
    - `src/i18n/en.ts` and `src/i18n/it.ts`
    - `src/layouts/Layout.astro` (structured data)
 
 3. **Deploy to hosting service**:
-
    - Build command: `npm run build`
    - Output directory: `dist/`
    - Compatible with Netlify, Vercel, GitHub Pages, etc.

@@ -10,32 +10,32 @@ export default defineConfig({
         defaultLocale: 'it',
         locales: {
           it: 'it',
-          en: 'en'
-        }
-      }
-    })
+          en: 'en',
+        },
+      },
+    }),
   ],
 
   site: 'https://studiolegaleferrini.com',
 
   build: {
-    format: 'file'
+    format: 'file',
   },
 
   image: {
     domains: ['studiolegaleferrini.com'],
-    formats: ['webp', 'avif']
+    formats: ['webp', 'avif'],
   },
 
   i18n: {
     defaultLocale: 'it',
     locales: ['en', 'it'],
     routing: {
-      prefixDefaultLocale: true
-    }
+      prefixDefaultLocale: true,
+    },
   },
 
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

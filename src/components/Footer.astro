@@ -18,21 +18,27 @@ const currentYear = new Date().getFullYear();
       <div class="md:col-span-2">
         <h3 class="text-xl font-bold mb-4">Studio Legale Ferrini</h3>
         <p class="text-gray-300 mb-4">
-          {lang === 'en' 
-            ? 'Professional legal services with over 20 years of experience in civil, commercial, and family law.'
-            : 'Servizi legali professionali con oltre 20 anni di esperienza nel diritto civile, commerciale e di famiglia.'
+          {
+            lang === 'en'
+              ? 'Professional legal services with over 20 years of experience in civil, commercial, and family law.'
+              : 'Servizi legali professionali con oltre 20 anni di esperienza nel diritto civile, commerciale e di famiglia.'
           }
         </p>
         <div class="space-y-2 text-sm text-gray-300">
           <div class="flex items-center">
             <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+              <path
+                fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd"></path>
             </svg>
             <span>Via Roma 123, 47921 Rimini RN, Italia</span>
           </div>
           <div class="flex items-center">
             <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              <path
+                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+              ></path>
             </svg>
             <a href="tel:+390541123456" class="hover:text-gold transition-colors duration-200">
               +39 0541 123456
@@ -40,10 +46,14 @@ const currentYear = new Date().getFullYear();
           </div>
           <div class="flex items-center">
             <svg class="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+              ></path>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
             </svg>
-            <a href="mailto:info@studiolegaleferrini.com" class="hover:text-gold transition-colors duration-200">
+            <a
+              href="mailto:info@studiolegaleferrini.com"
+              class="hover:text-gold transition-colors duration-200"
+            >
               info@studiolegaleferrini.com
             </a>
           </div>
@@ -55,27 +65,42 @@ const currentYear = new Date().getFullYear();
         <h4 class="text-lg font-semibold mb-4">{lang === 'en' ? 'Quick Links' : 'Link Rapidi'}</h4>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href={`/${lang}`} class="text-gray-300 hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}`}
+              class="text-gray-300 hover:text-gold transition-colors duration-200"
+            >
               {t.nav.home}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/team`} class="text-gray-300 hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}/team`}
+              class="text-gray-300 hover:text-gold transition-colors duration-200"
+            >
               {t.nav.team}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/faq`} class="text-gray-300 hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}/faq`}
+              class="text-gray-300 hover:text-gold transition-colors duration-200"
+            >
               {t.nav.faq}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/contact`} class="text-gray-300 hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}/contact`}
+              class="text-gray-300 hover:text-gold transition-colors duration-200"
+            >
               {t.nav.contact}
             </a>
           </li>
           <li>
-            <a href={`/${lang}/where-we-are`} class="text-gray-300 hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}/where-we-are`}
+              class="text-gray-300 hover:text-gold transition-colors duration-200"
+            >
               {t.nav.whereWeAre}
             </a>
           </li>
@@ -94,9 +119,13 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+    <div
+      class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
+    >
       <div class="text-sm text-gray-300">
-        © {currentYear} Studio Legale Ferrini. {lang === 'en' ? 'All rights reserved.' : 'Tutti i diritti riservati.'}
+        © {currentYear} Studio Legale Ferrini. {
+          lang === 'en' ? 'All rights reserved.' : 'Tutti i diritti riservati.'
+        }
       </div>
       <div class="flex space-x-6 mt-4 md:mt-0">
         <a href="#" class="text-gray-300 hover:text-gold transition-colors duration-200">
