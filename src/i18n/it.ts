@@ -5,7 +5,7 @@ export const it = {
     team: 'Team',
     faq: 'FAQ',
     contact: 'Contatti',
-    whereWeAre: 'Dove Siamo',
+    whereWeAre: 'Dove siamo',
   },
 
   // Common
@@ -115,7 +115,7 @@ export const it = {
     copyright: 'Tutti i diritti riservati.',
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Termini di Servizio',
-    officeHours: 'Orari di Apertura',
+    officeHours: 'Orari di apertura',
     officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
   },
 
@@ -194,6 +194,11 @@ export const it = {
           'Sì, rappresentiamo clienti in tutta la regione Emilia-Romagna e possiamo gestire casi in altre giurisdizioni italiane quando necessario. Lavoriamo anche con clienti internazionali su questioni legali transfrontaliere.',
       },
     ],
+    cta: {
+      title: 'Hai ancora domande?',
+      description:
+        'Il nostro team legale è qui per aiutarti. Contattaci per una consulenza personalizzata.',
+    },
   },
 
   // Contact
@@ -202,17 +207,17 @@ export const it = {
     description:
       'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
     form: {
-      name: 'Nome Completo',
+      name: 'Nome e Cognome',
       email: 'Indirizzo Email',
       phone: 'Numero di Telefono',
-      subject: 'Oggetto',
       message: 'Messaggio',
       submit: 'Invia Messaggio',
       required: 'Obbligatorio',
     },
     info: {
       title: 'Contattaci',
-      description: 'Contattaci oggi per fissare una consulenza con il nostro team legale esperto.',
+      description:
+        'Compila il modulo indicando brevemente cosa è accaduto, così potremo offrirti un orientamento mirato fin dal primo appuntamento. Verrai ricontattato al più presto dal nostro team.',
       hours: {
         title: 'Orari di Apertura',
         weekdays: 'Lunedì - Venerdì: 9:00 - 18:00',
@@ -224,20 +229,31 @@ export const it = {
 
   // Where We Are
   whereWeAre: {
-    title: 'Dove Siamo',
-    description:
-      'Visita il nostro ufficio nel cuore di Rimini per una consulenza legale professionale.',
-    location: {
-      title: 'La Nostra Sede',
-      address: 'Via Roma 123, 47921 Rimini RN, Italia',
-      description:
-        'Il nostro ufficio è convenientemente situato nel centro di Rimini, facilmente accessibile con i mezzi pubblici e con opzioni di parcheggio nelle vicinanze.',
-    },
-    transport: {
-      title: 'Come Raggiungerci',
-      parking: 'Parcheggio a pagamento disponibile in Via Roma e nelle strade vicine',
-      publicTransport: 'Le linee di autobus 4, 9 e 11 fermano nelle vicinanze a Piazza Tre Martiri',
-      train: 'A 10 minuti a piedi dalla Stazione Centrale di Rimini',
+    title: 'Dove siamo',
+    description: 'Visita il nostro studio per una consulenza legale professionale.',
+    mapTitle: 'Posizione Studio Legale Ferrini',
+    mapLoading: 'Caricamento Mappa...',
+    locationsTitle: 'Le nostre sedi',
+    locations: [
+      {
+        subtitle: 'Sede di Cesena',
+        address: 'Viale IV Novembre 145, 47522 Cesena FC',
+        googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
+        description:
+          'La sede si trova al 4° piano, con accesso diretto dal comodo parcheggio sottostante.',
+        buildingPhoto: '../public/images/sede-cesena.png',
+      },
+      {
+        subtitle: 'Sede di Forlì',
+        address: 'Corso Giuseppe Garibaldi 29, 47121 Forlì FC',
+        googleMapsUrl: 'https://maps.app.goo.gl/Ab9Z57XzvsPAoLK59',
+        description: 'La sede si trova nel cuore della città, a pochi passi dal Tribunale.',
+      },
+    ],
+    contact: {
+      title: 'Hai bisogno di indicazioni?',
+      description: 'Chiamaci per indicazioni dettagliate o per fissare un appuntamento.',
+      callNow: 'Chiama Ora',
     },
   },
 };

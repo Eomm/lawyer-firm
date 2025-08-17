@@ -162,6 +162,11 @@ export const en = {
           'Yes, we represent clients throughout the Emilia-Romagna region and can handle cases in other Italian jurisdictions when necessary. We also work with international clients on cross-border legal matters.',
       },
     ],
+    cta: {
+      title: 'Still Have Questions?',
+      description: 'Our legal team is here to help. Contact us for a personalized consultation.',
+      phone: '+39 0547 29 180',
+    },
   },
 
   // Contact
@@ -194,17 +199,45 @@ export const en = {
   whereWeAre: {
     title: 'Where We Are',
     description: 'Visit our office in the heart of Rimini for professional legal consultation.',
-    location: {
-      title: 'Our Location',
-      address: 'Via Roma 123, 47921 Rimini RN, Italy',
-      description:
-        'Our office is conveniently located in the center of Rimini, easily accessible by public transportation and with nearby parking options.',
-    },
+    mapTitle: 'Studio Legale Ferrini Location',
+    mapLoading: 'Map Loading...',
+    locationsTitle: 'Our Offices',
+    locations: [
+      {
+        subtitle: 'Cesena Office',
+        address: 'Viale IV Novembre 145, 47522 Cesena FC',
+        googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
+        description:
+          'The office is located on the 4th floor, with direct access from the convenient parking below.',
+        buildingPhoto: 'public/images/sede-cesena.png',
+      },
+      {
+        subtitle: 'Forlì Office',
+        address: 'Corso Giuseppe Garibaldi 29, 47121 Forlì FC',
+        googleMapsUrl: 'https://maps.app.goo.gl/Ab9Z57XzvsPAoLK59',
+        description:
+          'The office is located in the heart of the city, just steps from the courthouse.',
+      },
+    ],
     transport: {
       title: 'How to Reach Us',
       parking: 'Paid parking available on Via Roma and nearby streets',
       publicTransport: 'Bus lines 4, 9, and 11 stop nearby at Piazza Tre Martiri',
       train: '10-minute walk from Rimini Central Station',
+      parkingTitle: 'Parking',
+      publicTransportTitle: 'Public Transport',
+      trainTitle: 'Train Station',
+    },
+    contact: {
+      title: 'Need Directions?',
+      description: 'Call us for detailed directions or to schedule an appointment.',
+      callNow: 'Call Now',
+    },
+    officeHours: {
+      regularHours: 'Regular Hours',
+      emergencyContact: 'Emergency Contact',
+      emergencyDescription: 'For urgent matters outside office hours:',
+      emergencyPhone: '+39 333 123 4567',
     },
   },
 };

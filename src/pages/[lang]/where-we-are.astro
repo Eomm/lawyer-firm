@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import Icon from '@/components/Icon.astro';
 import { getTranslations, getStaticPaths, type Language } from '@/i18n';
 
 export { getStaticPaths };
@@ -34,163 +35,64 @@ const currentPath = `/${lang}/where-we-are`;
 
     <!-- Location Section -->
     <section class="py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Map -->
-          <div class="order-2 lg:order-1">
-            <div class="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-96 lg:h-full relative">
-              <!-- Google Maps Embed -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1234567890123!2d12.5678901234567!3d44.0671234567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cb1234567890a%3A0x1234567890abcdef!2sVia%20Roma%2C%20123%2C%2047921%20Rimini%20RN%2C%20Italy!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                width="100%"
-                height="100%"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title={lang === 'en'
-                  ? 'Studio Legale Ferrini Location'
-                  : 'Posizione Studio Legale Ferrini'}></iframe>
-
-              <!-- Fallback for when maps don't load -->
-              <div
-                class="absolute inset-0 flex items-center justify-center bg-gray-200 text-gray-500"
-              >
-                <div class="text-center">
-                  <svg
-                    class="w-16 h-16 mx-auto mb-4 text-gray-400"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  <p>{lang === 'en' ? 'Map Loading...' : 'Caricamento Mappa...'}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
           <!-- Location Info -->
-          <div class="order-1 lg:order-2">
-            <h2 class="text-3xl font-bold text-navy mb-8">{t.whereWeAre.location.title}</h2>
-
-            <!-- Address -->
-            <div class="mb-8">
-              <div class="flex items-start mb-4">
-                <div
-                  class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                >
-                  <svg class="w-6 h-6 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
+          <div>
+            <!-- Locations -->
+            <div class="max-w-2xl mx-auto text-left">
+            {t.whereWeAre.locations.map((office) => (
+              <div class="mb-8">
+                <div class="flex items-start mb-4">
+                  <div
+                    class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <Icon name="MapPin" class="w-6 h-6 text-gold" size={24} />
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold text-navy mb-2">{office.subtitle}</h3>
+                    <a
+                      href={office.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-gray-700 text-lg underline hover:text-gold transition-colors duration-200"
+                    >
+                      {office.address}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-navy mb-2">{t.common.address}</h3>
-                  <p class="text-gray-700 text-lg">{t.whereWeAre.location.address}</p>
-                </div>
+                <p class="text-gray-600 leading-relaxed ml-16">
+                  {office.description}
+                </p>
+                {office.buildingPhoto && (
+                  <div class="ml-16 mt-4">
+                    <img
+                      src={office.buildingPhoto}
+                      alt={office.subtitle}
+                      class="rounded-lg shadow-md w-full max-w-md"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
               </div>
-              <p class="text-gray-600 leading-relaxed ml-16">
-                {t.whereWeAre.location.description}
-              </p>
-            </div>
-
-            <!-- Transportation -->
-            <div class="mb-8">
-              <h3 class="text-2xl font-bold text-navy mb-6">{t.whereWeAre.transport.title}</h3>
-
-              <div class="space-y-6">
-                <!-- Parking -->
-                <div class="flex items-start">
-                  <div
-                    class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                  >
-                    <svg class="w-5 h-5 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                      ></path>
-                      <path
-                        d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-navy mb-1">
-                      {lang === 'en' ? 'Parking' : 'Parcheggio'}
-                    </h4>
-                    <p class="text-gray-600">{t.whereWeAre.transport.parking}</p>
-                  </div>
-                </div>
-
-                <!-- Public Transport -->
-                <div class="flex items-start">
-                  <div
-                    class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                  >
-                    <svg class="w-5 h-5 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M4 5a2 2 0 00-2 2v6a2 2 0 002 2V9a3 3 0 013-3h5a2 2 0 012-2H4zm4 2a1 1 0 000 2h8a1 1 0 100-2H8zm0 4a1 1 0 100 2h8a1 1 0 100-2H8z"
-                        clip-rule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-navy mb-1">
-                      {lang === 'en' ? 'Public Transport' : 'Trasporti Pubblici'}
-                    </h4>
-                    <p class="text-gray-600">{t.whereWeAre.transport.publicTransport}</p>
-                  </div>
-                </div>
-
-                <!-- Train -->
-                <div class="flex items-start">
-                  <div
-                    class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                  >
-                    <svg class="w-5 h-5 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        d="M4 4a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0v2h8V4H6zm0 4v6h8V8H6z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 class="font-semibold text-navy mb-1">
-                      {lang === 'en' ? 'Train Station' : 'Stazione Ferroviaria'}
-                    </h4>
-                    <p class="text-gray-600">{t.whereWeAre.transport.train}</p>
-                  </div>
-                </div>
-              </div>
+            ))}
             </div>
 
             <!-- Contact CTA -->
-            <div class="bg-gray-50 rounded-xl p-6">
+            <div class="bg-gray-50 rounded-xl p-6 mb-8 max-w-2xl mx-auto text-left">
               <h4 class="text-lg font-semibold text-navy mb-3">
-                {lang === 'en' ? 'Need Directions?' : 'Hai Bisogno di Indicazioni?'}
+                {t.whereWeAre.contact.title}
               </h4>
               <p class="text-gray-600 mb-4">
-                {
-                  lang === 'en'
-                    ? 'Call us for detailed directions or to schedule an appointment.'
-                    : 'Chiamaci per indicazioni dettagliate o per fissare un appuntamento.'
-                }
+                {t.whereWeAre.contact.description}
               </p>
               <div class="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="tel:+390541123456"
+                  href={`tel:${t.footer.phone}`}
                   class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
                 >
-                  <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                    ></path>
-                  </svg>
-                  {lang === 'en' ? 'Call Now' : 'Chiama Ora'}
+                  <Icon name="Phone" class="w-4 h-4 mr-2" size={16} />
+                  {t.whereWeAre.contact.callNow}
                 </a>
                 <a
                   href={`/${lang}/contact`}
@@ -210,54 +112,15 @@ const currentPath = `/${lang}/where-we-are`;
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">
-            {t.common.officeHours}
+            {t.footer.officeHours}
           </h2>
         </div>
 
         <div class="max-w-2xl mx-auto">
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 class="text-lg font-semibold text-navy mb-4">
-                  {lang === 'en' ? 'Regular Hours' : 'Orari Regolari'}
-                </h3>
-                <div class="space-y-2 text-gray-700">
-                  <div class="flex justify-between">
-                    <span>{t.common.monday} - {t.common.friday}</span>
-                    <span class="font-medium">9:00 - 18:00</span>
-                  </div>
-                  <div class="flex justify-between">
-                    <span>{t.common.saturday}</span>
-                    <span class="font-medium">9:00 - 13:00</span>
-                  </div>
-                  <div class="flex justify-between">
-                    <span>{t.common.sunday}</span>
-                    <span class="font-medium text-red-600">{t.common.closed}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 class="text-lg font-semibold text-navy mb-4">
-                  {lang === 'en' ? 'Emergency Contact' : 'Contatto di Emergenza'}
-                </h3>
-                <div class="text-gray-700">
-                  <p class="mb-2">
-                    {
-                      lang === 'en'
-                        ? 'For urgent matters outside office hours:'
-                        : 'Per questioni urgenti fuori orario:'
-                    }
-                  </p>
-                  <a
-                    href="tel:+393331234567"
-                    class="text-navy font-semibold hover:text-gold transition-colors duration-200"
-                  >
-                    +39 333 123 4567
-                  </a>
-                </div>
-              </div>
-            </div>
+            <h3 class="text-center font-semibold text-navy mb-4">
+              {t.footer.officeHoursDescription}
+            </h3>
           </div>
         </div>
       </div>
