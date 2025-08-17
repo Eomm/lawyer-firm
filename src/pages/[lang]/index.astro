@@ -23,12 +23,14 @@ const currentPath = `${baseUrl}${lang}`;
 
   <main>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32 overflow-hidden">
+    <section
+      class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32 overflow-hidden"
+    >
       <!-- Background Image with Fade Effect -->
       <div class="absolute inset-0">
-        <Image 
+        <Image
           src={justiceImage}
-          alt="" 
+          alt=""
           class="absolute -top-30 left-0 w-full h-[calc(100%+120px)] object-cover object-left-top opacity-40"
           aria-hidden="true"
         />
@@ -63,19 +65,19 @@ const currentPath = `${baseUrl}${lang}`;
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {t.home.services.items.map((service) => (
-            <div
-              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold"
-            >
-              {service.icon && (
-                <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-6">
-                  <Icon name={service.icon} class="w-8 h-8 text-gold" size={32} />
-                </div>
-              )}
-              <h3 class="text-xl font-bold text-navy mb-4">{service.title}</h3>
-              <p class="text-gray-600 leading-relaxed">{service.description}</p>
-            </div>
-          ))}
+          {
+            t.home.services.items.map(service => (
+              <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 border-t-4 border-gold">
+                {service.icon && (
+                  <div class="w-16 h-16 bg-navy rounded-lg flex items-center justify-center mb-6">
+                    <Icon name={service.icon} class="w-8 h-8 text-gold" size={32} />
+                  </div>
+                )}
+                <h3 class="text-xl font-bold text-navy mb-4">{service.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{service.description}</p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>

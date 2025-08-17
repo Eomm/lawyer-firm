@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // Check if we're in GitHub Actions environment for site URL
 const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
-const site = isGitHubActions 
+const site = isGitHubActions
   ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
   : 'https://studiolegaleferrini.com';
 const base = isGitHubActions ? `/${repoName}/` : undefined;
