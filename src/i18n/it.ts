@@ -10,7 +10,7 @@ export const it = {
 
   // Common
   common: {
-    readMore: 'Leggi di Più',
+    readMore: 'Leggi di più',
     bookConsultation: 'Prenota una Consulenza',
     phone: 'Telefono',
     email: 'Email',
@@ -32,35 +32,91 @@ export const it = {
     description:
       'Rappresentanza legale esperta a Rimini. Specializzati in diritto civile, commerciale e di famiglia. Contattaci per una consulenza legale professionale.',
     hero: {
-      title: 'Eccellenza Legale Professionale',
+      title: 'Diritto penale, il nostro lavoro da 25 anni',
       subtitle:
-        'Rappresentanza legale esperta con oltre 20 anni di esperienza nel diritto civile, commerciale e di famiglia.',
-      cta: 'Prenota Consulenza',
+        'Offriamo assistenza legale su misura in ogni ambito del settore penale, sia nella veste della difesa degli indagati·imputati che in quella della persona offesa·parte civile',
+      cta: 'Prenota subito una Consulenza',
     },
     services: {
-      title: 'I Nostri Servizi Legali',
-      civil: {
-        title: 'Diritto Civile',
-        description:
-          'Servizi completi di contenzioso civile e risoluzione delle controversie con comprovato track record di successo.',
-      },
-      commercial: {
-        title: 'Diritto Commerciale',
-        description:
-          'Consulenza esperta per aziende, contratti e controversie commerciali per proteggere i tuoi interessi.',
-      },
-      family: {
-        title: 'Diritto di Famiglia',
-        description:
-          'Rappresentanza compassionevole in questioni familiari, procedimenti di divorzio e casi di custodia.',
-      },
+      title: 'Aree di attività',
+      items: [
+        {
+          title: 'Diritto penale familiare',
+          description:
+            'Tutela attenta nelle controversie che coinvolgono dinamiche familiari delicate (stalking, maltrattamenti, ecc.), garantendo supporto legale con sensibilità e rigore giuridico.',
+          icon: 'HeartHandshake',
+        },
+        {
+          title: 'Reatri stradali',
+          description:
+            'Assistenza qualificata per la difesa in procedimenti connessi a violazioni del codice della strada (guida in stato d’ebbrezza o sotto l’effetto di sostanze stupefacenti, lesioni o omicidi stradali, ecc.), con particolare attenzione alla tutela dei diritti della persona.',
+          icon: 'CarTaxiFront',
+        },
+        {
+          title: 'Diritto penale criminale',
+          description:
+            'Difesa solida e strategica nei procedimenti per reati contro la persona e il patrimonio, sempre orientata a garantire il giusto processo.',
+          icon: 'Shield',
+        },
+        {
+          title: 'Diritto penale tributario',
+          description:
+            'Offriamo consulenza precisa per gestire complesse questioni fiscali con trasparenza e competenza.',
+          // icon: 'FileText',
+        },
+        {
+          title: 'Diritto penale fallimentare',
+          description:
+            'Consulenza e difesa in ipotesi di reati connessi a procedure concorsuali, salvaguardando gli interessi di imprenditori e professionisti coinvolti.',
+          // icon: 'Building2',
+        },
+        {
+          title: "Diritto penale d'impresa",
+          description:
+            'Supporto mirato per società e manager nella prevenzione e gestione dei reati d’impresa, con particolare attenzione alla responsabilità amministrativa degli enti ex d.lgs. 231/2001.',
+        },
+        {
+          title: "Diritto dell'esecuzione penale e penitenziario",
+          description:
+            'Assistenza nei procedimenti di esecuzione della pena e nelle misure alternative, con l’obiettivo di garantire il rispetto della dignità e dei diritti del detenuto.',
+        },
+        {
+          title: 'Diritto penale del lavoro',
+          description:
+            'Consulenza specializzata in reati connessi alla sicurezza sul lavoro e alla tutela dei rapporti lavorativi, a difesa sia dei lavoratori che dei datori di lavoro.',
+        },
+        {
+          title: 'Reati contro la pubblica amministrazione',
+          description:
+            'Difesa qualificata in procedimenti per reati contro la pubblica amministrazione (corruzione, concussione, ecc.), nel rispetto delle garanzie difensive e della complessità delle norme di settore.',
+        },
+      ],
     },
     about: {
-      title: 'Perché Scegliere Studio Legale Ferrini',
-      experience: 'Oltre 20 anni di esperienza legale',
+      title: 'Perché scegliere lo Studio Legale Ferrini',
+      experience: 'Oltre 25 anni di esperienza legale',
       personalized: 'Approccio personalizzato per ogni caso',
-      results: 'Comprovato track record di risultati di successo',
+      results: 'Reputazione consolidata grazie a risultati concreti',
     },
+    cta: {
+      title: 'Hai bisogno di assistenza legale?',
+      description: 'Contattaci oggi per una consulenza con il nostro team legale esperto.',
+      phone: '+39 0547 29 180',
+    },
+  },
+
+  // Footer
+  footer: {
+    description: 'Servizi legali professionali con oltre 25 anni di esperienza nel diritto penale.',
+    quickLinks: 'Link',
+    address: 'Viale IV Novembre 145, 47522 Cesena FC, Italia',
+    phone: '0547 29 180',
+    email: 'info@studiolegaleferrini.com',
+    copyright: 'Tutti i diritti riservati.',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Termini di Servizio',
+    officeHours: 'Orari di Apertura',
+    officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
   },
 
   // Team

@@ -1,0 +1,63 @@
+---
+import {
+  Scale,
+  Briefcase,
+  Heart,
+  Building2,
+  Users,
+  Shield,
+  FileText,
+  Gavel,
+  Home,
+  Handshake,
+  HeartHandshake,
+  CarTaxiFront,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
+
+} from 'lucide-astro';
+
+export interface Props {
+  name: string;
+  class?: string;
+  size?: number;
+}
+
+const { name, class: className = '', size = 24 } = Astro.props;
+
+// Icon mapping
+const iconMap: Record<string, typeof Scale> = {
+  Scale,
+  Briefcase,
+  Heart,
+  Building2,
+  Users,
+  Shield,
+  FileText,
+  Gavel,
+  Home,
+  Handshake,
+  HeartHandshake,
+  CarTaxiFront,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
+};
+
+const IconComponent = iconMap[name];
+
+if (!IconComponent) {
+  console.warn(`Icon "${name}" not found. Available icons:`, Object.keys(iconMap));
+}
+---
+
+{
+  IconComponent ? (
+    <IconComponent size={size} class={className} />
+  ) : (
+    <Scale size={size} class={className} />
+  )
+}

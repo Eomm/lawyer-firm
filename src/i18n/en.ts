@@ -39,21 +39,29 @@ export const en = {
     },
     services: {
       title: 'Our Legal Services',
-      civil: {
-        title: 'Civil Law',
-        description:
-          'Comprehensive civil litigation and dispute resolution services with proven track record of success.',
-      },
-      commercial: {
-        title: 'Commercial Law',
-        description:
-          'Expert guidance for businesses, contracts, and commercial disputes to protect your interests.',
-      },
-      family: {
-        title: 'Family Law',
-        description:
-          'Compassionate representation in family matters, divorce proceedings, and custody cases.',
-      },
+      items: [
+        {
+          id: 'civil',
+          title: 'Civil Law',
+          description:
+            'Comprehensive civil litigation and dispute resolution services with proven track record of success.',
+          icon: 'Scale',
+        },
+        {
+          id: 'commercial',
+          title: 'Commercial Law',
+          description:
+            'Expert guidance for businesses, contracts, and commercial disputes to protect your interests.',
+          icon: 'Briefcase',
+        },
+        {
+          id: 'family',
+          title: 'Family Law',
+          description:
+            'Compassionate representation in family matters, divorce proceedings, and custody cases.',
+          icon: 'Heart',
+        },
+      ],
     },
     about: {
       title: 'Why Choose Studio Legale Ferrini',
@@ -61,6 +69,26 @@ export const en = {
       personalized: 'Personalized approach to each case',
       results: 'Proven track record of successful outcomes',
     },
+    cta: {
+      title: 'Ready to Get Started?',
+      description: 'Contact us today for a consultation with our experienced legal team.',
+      phone: '+39 0541 123456',
+    },
+  },
+
+  // Footer
+  footer: {
+    description:
+      'Professional legal services with over 20 years of experience in civil, commercial, and family law.',
+    quickLinks: 'Quick Links',
+    address: 'Via Roma 123, 47921 Rimini RN, Italia',
+    phone: '+39 0541 123456',
+    email: 'info@studiolegaleferrini.com',
+    copyright: 'All rights reserved.',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Terms of Service',
+    officeHours: 'Orari di Apertura',
+    officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
   },
 
   // Team
