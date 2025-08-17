@@ -129,6 +129,17 @@ export const en = {
         admissions: 'Italian Bar Association, European Patent Attorney',
       },
     },
+    memberDetail: {
+      contactInformation: 'Contact Information',
+      specializations: 'Specializations',
+      education: 'Education',
+      barAdmissions: 'Bar Admissions & Certifications',
+      getInTouch: 'Get in Touch',
+      scheduleConsultation: 'Schedule a consultation with {name} to discuss your legal needs.',
+      backToTeam: 'Back to Team',
+      needLegalAssistance: 'Need Legal Assistance?',
+      teamReadyToHelp: 'Our experienced team is ready to help you with your legal needs.',
+    },
   },
 
   // FAQ

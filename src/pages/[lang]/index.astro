@@ -3,14 +3,17 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import Icon from '@/components/Icon.astro';
+import { Image } from 'astro:assets';
 import { getTranslations, getStaticPaths, type Language } from '@/i18n';
+
+// Import hero background image
+import justiceImage from '/public/images/gustice.avif';
 
 export { getStaticPaths };
 
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
 const currentPath = `/${lang}`;
-const baseUrl = import.meta.env.BASE_URL || '';
 ---
 
 <Layout title={t.home.title} description={t.home.description} lang={lang} currentPath={currentPath}>
@@ -21,8 +24,8 @@ const baseUrl = import.meta.env.BASE_URL || '';
     <section class="relative bg-gradient-to-br from-navy to-navy-light text-white py-20 lg:py-32 overflow-hidden">
       <!-- Background Image with Fade Effect -->
       <div class="absolute inset-0">
-        <img 
-          src={`${baseUrl}images/gustice.avif`}
+        <Image 
+          src={justiceImage}
           alt="" 
           class="absolute -top-30 left-0 w-full h-[calc(100%+120px)] object-cover object-left-top opacity-40"
           aria-hidden="true"

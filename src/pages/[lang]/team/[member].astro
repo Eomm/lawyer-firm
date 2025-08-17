@@ -2,7 +2,13 @@
 import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import { Image } from 'astro:assets';
 import { getTranslations, type Language } from '@/i18n';
+
+// Import member detail images
+import ferriniLongImage from '/public/images/ferrini-long.png';
+import giordanaLongImage from '/public/images/giordana-long.png';
+import maraldiLongImage from '/public/images/maraldi-long.png';
 
 export async function getStaticPaths() {
   const members = ['luca-ferrini', 'giordana-pasini', 'vanessa-maraldi'];
@@ -18,7 +24,6 @@ export async function getStaticPaths() {
 const { lang, member } = Astro.params as { lang: Language; member: string };
 const t = getTranslations(lang);
 const currentPath = `/${lang}/team/${member}`;
-const baseUrl = import.meta.env.BASE_URL || '';
 
 // Get member data
 const memberData = {
@@ -30,7 +35,7 @@ const memberData = {
     specializations: t.team.members.luca.specializations,
     education: t.team.members.luca.education,
     admissions: t.team.members.luca.admissions,
-    image: `${baseUrl}images/luca-ferrini.jpg`,
+    image: ferriniLongImage,
   },
   'giordana-pasini': {
     name: t.team.members.giordana.name,
@@ -40,7 +45,7 @@ const memberData = {
     specializations: t.team.members.giordana.specializations,
     education: t.team.members.giordana.education,
     admissions: t.team.members.giordana.admissions,
-    image: `${baseUrl}images/giordana-pasini.jpg`,
+    image: giordanaLongImage,
   },
   'vanessa-maraldi': {
     name: t.team.members.vanessa.name,
@@ -50,7 +55,7 @@ const memberData = {
     specializations: t.team.members.vanessa.specializations,
     education: t.team.members.vanessa.education,
     admissions: t.team.members.vanessa.admissions,
-    image: `${baseUrl}images/vanessa-maraldi.jpg`,
+    image: maraldiLongImage,
   },
 };
 
@@ -94,15 +99,17 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
           <!-- Photo -->
           <div class="lg:col-span-1">
             <div class="sticky top-8">
-              <img
+              <Image
                 src={currentMember.image}
                 alt={currentMember.name}
                 class="w-full rounded-xl shadow-lg"
                 loading="eager"
+                width={400}
+                height={600}
               />
               <div class="mt-6 bg-gray-50 rounded-xl p-6">
                 <h3 class="text-lg font-semibold text-navy mb-4">
-                  {lang === 'en' ? 'Contact Information' : 'Informazioni di Contatto'}
+                  {t.team.memberDetail.contactInformation}
                 </h3>
                 <div class="space-y-3 text-sm">
                   <div class="flex items-center">
@@ -161,51 +168,13 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
               </p>
             </div>
 
-            <!-- Specializations -->
-            <div class="mb-8">
-              <h3 class="text-2xl font-bold text-navy mb-4">
-                {lang === 'en' ? 'Specializations' : 'Specializzazioni'}
-              </h3>
-              <p class="text-gray-700">
-                {currentMember.specializations}
-              </p>
-            </div>
-
-            <!-- Education -->
-            <div class="mb-8">
-              <h3 class="text-2xl font-bold text-navy mb-4">
-                {lang === 'en' ? 'Education' : 'Formazione'}
-              </h3>
-              <p class="text-gray-700">
-                {currentMember.education}
-              </p>
-            </div>
-
-            <!-- Admissions -->
-            <div class="mb-12">
-              <h3 class="text-2xl font-bold text-navy mb-4">
-                {
-                  lang === 'en'
-                    ? 'Bar Admissions & Certifications'
-                    : "Iscrizioni all'Albo e Certificazioni"
-                }
-              </h3>
-              <p class="text-gray-700">
-                {currentMember.admissions}
-              </p>
-            </div>
-
             <!-- Contact CTA -->
             <div class="bg-gray-50 rounded-xl p-8">
               <h3 class="text-xl font-bold text-navy mb-4">
-                {lang === 'en' ? 'Get in Touch' : 'Contatta'}
+                {t.team.memberDetail.getInTouch}
               </h3>
               <p class="text-gray-600 mb-6">
-                {
-                  lang === 'en'
-                    ? `Schedule a consultation with ${currentMember.name} to discuss your legal needs.`
-                    : `Prenota una consulenza con ${currentMember.name} per discutere delle tue esigenze legali.`
-                }
+                {t.team.memberDetail.scheduleConsultation.replace('{name}', currentMember.name)}
               </p>
               <a
                 href={`/${lang}/contact`}
@@ -232,7 +201,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
               d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
               clip-rule="evenodd"></path>
           </svg>
-          {lang === 'en' ? 'Back to Team' : 'Torna al Team'}
+          {t.team.memberDetail.backToTeam}
         </a>
       </div>
     </section>

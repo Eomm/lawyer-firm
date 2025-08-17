@@ -47,7 +47,7 @@ export const it = {
           icon: 'HeartHandshake',
         },
         {
-          title: 'Reatri stradali',
+          title: 'Reati stradali',
           description:
             'Assistenza qualificata per la difesa in procedimenti connessi a violazioni del codice della strada (guida in stato d’ebbrezza o sotto l’effetto di sostanze stupefacenti, lesioni o omicidi stradali, ecc.), con particolare attenzione alla tutela dei diritti della persona.',
           icon: 'CarTaxiFront',
@@ -105,30 +105,16 @@ export const it = {
     },
   },
 
-  // Footer
-  footer: {
-    description: 'Servizi legali professionali con oltre 25 anni di esperienza nel diritto penale.',
-    quickLinks: 'Link',
-    address: 'Viale IV Novembre 145, 47522 Cesena FC, Italia',
-    phone: '0547 29 180',
-    email: 'info@studiolegaleferrini.com',
-    copyright: 'Tutti i diritti riservati.',
-    privacyPolicy: 'Privacy Policy',
-    termsOfService: 'Termini di Servizio',
-    officeHours: 'Orari di apertura',
-    officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
-  },
-
   // Team
   team: {
-    title: 'Il Nostro Team Legale',
+    title: 'Professionisti legali per ogni esigenza',
     description:
-      'Incontra i nostri professionisti legali esperti dedicati a fornire un servizio eccezionale.',
+      'Il nostro studio si fonda su competenza, integrità e dedizione, valori che guidano ogni nostra azione per garantire risultati eccellenti e una tutela personalizzata ai nostri clienti.',
     members: {
       luca: {
         name: 'Luca Ferrini',
-        title: 'Senior Partner e Fondatore',
-        bio: 'Con oltre 20 anni di esperienza nel diritto civile e commerciale, Luca Ferrini ha fondato Studio Legale Ferrini con la visione di fornire servizi legali eccezionali. È specializzato in controversie complesse e ha rappresentato con successo clienti in casi di alto profilo.',
+        title: 'Fondatore e Avvocato Senior',
+        bio: 'Professionista con vasta esperienza in diritto penale societario e commerciale.',
         fullBio:
           "Luca Ferrini si è laureato summa cum laude presso la Facoltà di Giurisprudenza dell'Università di Bologna e pratica legge da oltre due decenni. È riconosciuto come uno dei principali avvocati civilisti della regione Emilia-Romagna. La sua esperienza spazia dalle controversie commerciali, al diritto contrattuale, alle transazioni immobiliari e al diritto societario. Luca ha gestito con successo casi del valore di milioni di euro ed è stato presentato in diverse pubblicazioni legali per il suo approccio innovativo a questioni legali complesse. È anche un relatore frequente in conferenze legali e funge da mentore per giovani avvocati.",
         specializations:
@@ -138,8 +124,8 @@ export const it = {
       },
       giordana: {
         name: 'Giordana Pasini',
-        title: 'Avvocato Associato',
-        bio: 'Giordana è specializzata nel diritto di famiglia e ha un approccio compassionevole alle questioni legali sensibili. Ha aiutato numerose famiglie a navigare procedimenti complessi di divorzio e custodia.',
+        title: 'Avvocato',
+        bio: 'Approccio innovativo e soluzioni mirate ai clienti.',
         fullBio:
           "Giordana Pasini si è unita allo Studio Legale Ferrini dopo aver completato i suoi studi legali presso l'Università di Firenze. Ha sviluppato una reputazione per il suo approccio empatico ma strategico alle questioni di diritto di famiglia. La sua pratica si concentra su procedimenti di divorzio, casi di custodia dei figli, relazioni domestiche e mediazione familiare. Giordana è certificata in diritto collaborativo e mediazione familiare, permettendole di aiutare le famiglie a risolvere le controversie fuori dal tribunale quando possibile. Ha gestito con successo oltre 200 casi di diritto di famiglia ed è nota per la sua capacità di ottenere risultati favorevoli minimizzando il trauma emotivo per tutte le parti coinvolte.",
         specializations:
@@ -149,8 +135,8 @@ export const it = {
       },
       vanessa: {
         name: 'Vanessa Maraldi',
-        title: 'Avvocato Associato',
-        bio: 'Vanessa si concentra sul diritto commerciale e sulla proprietà intellettuale. Le sue capacità analitiche e attenzione ai dettagli la rendono una risorsa inestimabile per i nostri clienti business.',
+        title: 'Avvocato',
+        bio: 'Dottore di Ricerca, collabora stabilmente con la cattedra di Procedura penale dell’Università di Bologna.',
         fullBio:
           "Vanessa Maraldi porta una prospettiva fresca allo Studio Legale Ferrini con la sua esperienza nel diritto commerciale e proprietà intellettuale. Dopo essersi laureata con lode presso la Facoltà di Giurisprudenza dell'Università di Milano, ha completato un LLM in Diritto della Proprietà Intellettuale. La sua pratica comprende protezione di marchi e diritti d'autore, costituzione di società, contratti commerciali e diritto del lavoro. Vanessa ha rappresentato con successo sia startup che aziende consolidate in varie questioni legali. È fluente in inglese, italiano e spagnolo, rendendola particolarmente preziosa per transazioni commerciali internazionali. Il suo approccio tecnologico e la comprensione dei modelli di business digitali la rendono l'avvocato di riferimento per le sfide aziendali moderne.",
         specializations:
@@ -159,6 +145,15 @@ export const it = {
           'Laurea in Giurisprudenza, Università di Milano (lode), LLM Diritto Proprietà Intellettuale',
         admissions: "Ordine degli Avvocati d'Italia, Mandatario Brevetti Europeo",
       },
+    },
+    memberDetail: {
+      contactInformation: 'Informazioni di Contatto',
+      getInTouch: 'Contatta',
+      scheduleConsultation:
+        'Prenota una consulenza con {name} per discutere delle tue esigenze legali.',
+      backToTeam: 'Torna al Team',
+      needLegalAssistance: 'Hai Bisogno di Assistenza Legale?',
+      teamReadyToHelp: 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.',
     },
   },
 
@@ -218,12 +213,6 @@ export const it = {
       title: 'Contattaci',
       description:
         'Compila il modulo indicando brevemente cosa è accaduto, così potremo offrirti un orientamento mirato fin dal primo appuntamento. Verrai ricontattato al più presto dal nostro team.',
-      hours: {
-        title: 'Orari di Apertura',
-        weekdays: 'Lunedì - Venerdì: 9:00 - 18:00',
-        weekend: 'Sabato: 9:00 - 13:00',
-        closed: 'Domenica: Chiuso',
-      },
     },
   },
 
@@ -241,7 +230,7 @@ export const it = {
         googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
         description:
           'La sede si trova al 4° piano, con accesso diretto dal comodo parcheggio sottostante.',
-        buildingPhoto: '../public/images/sede-cesena.png',
+        buildingPhoto: 'sedeCesenaImage',
       },
       {
         subtitle: 'Sede di Forlì',
@@ -255,5 +244,19 @@ export const it = {
       description: 'Chiamaci per indicazioni dettagliate o per fissare un appuntamento.',
       callNow: 'Chiama Ora',
     },
+  },
+
+  // Footer
+  footer: {
+    description: 'Servizi legali professionali con oltre 25 anni di esperienza nel diritto penale.',
+    quickLinks: 'Link',
+    address: 'Viale IV Novembre 145, 47522 Cesena FC',
+    phone: '0547 29 180',
+    email: 'info@studiolegaleferrini.com',
+    copyright: 'Tutti i diritti riservati.',
+    privacyPolicy: 'Privacy Policy',
+    termsOfService: 'Termini di Servizio',
+    officeHours: 'Orari di apertura',
+    officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
   },
 };
