@@ -13,7 +13,9 @@ export { getStaticPaths };
 
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
-const currentPath = `/${lang}`;
+
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}`;
 ---
 
 <Layout title={t.home.title} description={t.home.description} lang={lang} currentPath={currentPath}>
@@ -42,7 +44,7 @@ const currentPath = `/${lang}`;
             {t.home.hero.subtitle}
           </p>
           <a
-            href={`/${lang}/contact`}
+            href={`${baseUrl}${lang}/contact`}
             class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
           >
             {t.home.hero.cta}
@@ -129,7 +131,7 @@ const currentPath = `/${lang}`;
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={`/${lang}/contact`}
+            href={`${baseUrl}${lang}/contact`}
             class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
           >
             {t.common.bookConsultation}

@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { Image } from 'astro:assets';
+import Icon from '@/components/Icon.astro';
 import { getTranslations, type Language } from '@/i18n';
 
 // Import member detail images
@@ -23,7 +24,8 @@ export async function getStaticPaths() {
 
 const { lang, member } = Astro.params as { lang: Language; member: string };
 const t = getTranslations(lang);
-const currentPath = `/${lang}/team/${member}`;
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/team/${member}`;
 
 // Get member data
 const memberData = {
@@ -80,7 +82,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
           <li class="text-gray-400">/</li>
           <li>
             <a
-              href={`/${lang}/team`}
+              href={`${baseUrl}${lang}/team`}
               class="text-navy hover:text-gold transition-colors duration-200"
             >
               {t.nav.team}
@@ -113,15 +115,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 </h3>
                 <div class="space-y-3 text-sm">
                   <div class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-3 text-gold flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-                      ></path>
-                    </svg>
+                    <Icon name="Phone" class="w-4 h-4 mr-3 text-gold flex-shrink-0" size={16} />
                     <a
                       href="tel:+390541123456"
                       class="text-navy hover:text-gold transition-colors duration-200"
@@ -130,16 +124,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                     </a>
                   </div>
                   <div class="flex items-center">
-                    <svg
-                      class="w-4 h-4 mr-3 text-gold flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-                      ></path>
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                    </svg>
+                    <Icon name="Mail" class="w-4 h-4 mr-3 text-gold flex-shrink-0" size={16} />
                     <a
                       href="mailto:info@studiolegaleferrini.com"
                       class="text-navy hover:text-gold transition-colors duration-200"
@@ -177,7 +162,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 {t.team.memberDetail.scheduleConsultation.replace('{name}', currentMember.name)}
               </p>
               <a
-                href={`/${lang}/contact`}
+                href={`${baseUrl}${lang}/contact`}
                 class="inline-block bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
               >
                 {t.common.bookConsultation}
@@ -192,15 +177,10 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
     <section class="py-12 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <a
-          href={`/${lang}/team`}
+          href={`${baseUrl}${lang}/team`}
           class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
         >
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fill-rule="evenodd"
-              d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
+          <Icon name="ArrowLeft" class="w-4 h-4 mr-2" size={16} />
           {t.team.memberDetail.backToTeam}
         </a>
       </div>

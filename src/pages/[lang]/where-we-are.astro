@@ -13,9 +13,10 @@ export { getStaticPaths };
 // const imageMap = {
 //   'sedeCesenaImage': sedeCesenaImage,
 // }
+const baseUrl = import.meta.env.BASE_URL || '';
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
-const currentPath = `/${lang}/where-we-are`;
+const currentPath = `${baseUrl}${lang}/where-we-are`;
 ---
 
 <Layout
@@ -117,7 +118,7 @@ const currentPath = `/${lang}/where-we-are`;
             {t.whereWeAre.contact.callNow}
           </a>
           <a
-            href={`/${lang}/contact`}
+            href={`${baseUrl}${lang}/contact`}
             class="inline-flex items-center justify-center px-4 py-2 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
           >
             {t.common.bookConsultation}

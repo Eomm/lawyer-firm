@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { Image } from 'astro:assets';
+import Icon from '@/components/Icon.astro';
 import { getTranslations, getStaticPaths, type Language } from '@/i18n';
 
 // Import team member images
@@ -14,7 +15,8 @@ export { getStaticPaths };
 
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
-const currentPath = `/${lang}/team`;
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/team`;
 
 const teamMembers = [
   {
@@ -79,17 +81,11 @@ const teamMembers = [
                   <p class="text-gold font-semibold mb-4">{member.title}</p>
                   <p class="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
                   <a
-                    href={`/${lang}/team/${member.id}`}
+                    href={`${baseUrl}${lang}/team/${member.id}`}
                     class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
                   >
                     {t.common.readMore}
-                    <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
+                    <Icon name="ArrowRight" class="w-4 h-4 ml-2" size={16} />
                   </a>
                 </div>
               </div>
@@ -109,7 +105,7 @@ const teamMembers = [
           {t.team.memberDetail.teamReadyToHelp}
         </p>
         <a
-          href={`/${lang}/contact`}
+          href={`${baseUrl}${lang}/contact`}
           class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
         >
           {t.common.bookConsultation}

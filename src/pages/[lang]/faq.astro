@@ -9,7 +9,9 @@ export { getStaticPaths };
 
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
-const currentPath = `/${lang}/faq`;
+
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/faq`;
 ---
 
 <Layout title={t.faq.title} description={t.faq.description} lang={lang} currentPath={currentPath}>
@@ -85,7 +87,7 @@ const currentPath = `/${lang}/faq`;
             {t.whereWeAre.contact.callNow}
           </a>
           <a
-            href={`/${lang}/contact`}
+            href={`${baseUrl}${lang}/contact`}
             class="inline-flex items-center justify-center px-4 py-2 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
           >
             {t.common.bookConsultation}
