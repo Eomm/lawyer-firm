@@ -33,8 +33,7 @@ export const en = {
       'Expert legal representation in Rimini. Specialized in civil law, commercial law, and family law. Contact us for professional legal consultation.',
     hero: {
       title: 'Professional Legal Excellence',
-      subtitle:
-        'Expert legal representation with over 20 years of experience in civil, commercial, and family law.',
+      subtitle: 'Expert legal representation with over 20 years of experience in civil, commercial, and family law.',
       cta: 'Schedule Consultation',
     },
     services: {
@@ -50,15 +49,13 @@ export const en = {
         {
           id: 'commercial',
           title: 'Commercial Law',
-          description:
-            'Expert guidance for businesses, contracts, and commercial disputes to protect your interests.',
+          description: 'Expert guidance for businesses, contracts, and commercial disputes to protect your interests.',
           icon: 'Briefcase',
         },
         {
           id: 'family',
           title: 'Family Law',
-          description:
-            'Compassionate representation in family matters, divorce proceedings, and custody cases.',
+          description: 'Compassionate representation in family matters, divorce proceedings, and custody cases.',
           icon: 'Heart',
         },
       ],
@@ -78,8 +75,7 @@ export const en = {
 
   // Footer
   footer: {
-    description:
-      'Professional legal services with over 20 years of experience in civil, commercial, and family law.',
+    description: 'Professional legal services with over 20 years of experience in civil, commercial, and family law.',
     quickLinks: 'Quick Links',
     address: 'Via Roma 123, 47921 Rimini RN, Italia',
     phone: '+39 0541 123456',
@@ -94,51 +90,52 @@ export const en = {
   // Team
   team: {
     title: 'Our Legal Team',
-    description:
-      'Meet our experienced legal professionals dedicated to providing exceptional service.',
+    description: 'Meet our experienced legal professionals dedicated to providing exceptional service.',
     members: {
-      luca: {
+      'luca-ferrini': {
         name: 'Luca Ferrini',
         title: 'Senior Partner & Founding Lawyer',
         bio: 'With over 20 years of experience in civil and commercial law, Luca Ferrini founded Studio Legale Ferrini with a vision of providing exceptional legal services. He specializes in complex litigation and has successfully represented clients in high-profile cases.',
         fullBio:
           'Luca Ferrini graduated summa cum laude from the University of Bologna Law School and has been practicing law for over two decades. He is recognized as one of the leading civil litigation attorneys in the Emilia-Romagna region. His expertise spans commercial disputes, contract law, real estate transactions, and corporate law. Luca has successfully handled cases worth millions of euros and has been featured in several legal publications for his innovative approach to complex legal matters. He is also a frequent speaker at legal conferences and serves as a mentor to young lawyers.',
-        specializations: 'Civil Litigation, Commercial Law, Real Estate Law, Corporate Law',
-        education: 'J.D. University of Bologna Law School (summa cum laude)',
-        admissions: 'Italian Bar Association, Rimini Bar Association',
+        publications: [
+          `Le sanzioni amministrative accessorie all'accertamento dei reati in materia di circolazione stradale, in "I reati in materia di circolazione stradale", CEDAM, 2016, a cura di Trinci e Balzani, Cap.II, pp. 522-616.`,
+          `L'uso di gruppo di stupefacenti esclusivamente personale; in "Rivista Penale", 2012, n. 9, p. 817 e ss.`,
+          `Nuovi profili interpretativi dell'art. 80 comma 2 D.P.R. n. 309/90, in "Rivista Penale", 2011, n.7-8 p. 740 e ss.`,
+        ],
+        specializations: [
+          'Reati fallimentari',
+          'Reati tributari',
+          "Diritto penale d'impresa (responsabilità degli enti d. lgs. 231/2001)",
+        ],
       },
-      giordana: {
+      'giordana-pasini': {
         name: 'Giordana Pasini',
         title: 'Associate Lawyer',
         bio: 'Giordana specializes in family law and has a compassionate approach to sensitive legal matters. She has helped numerous families navigate complex divorce and custody proceedings.',
         fullBio:
           'Giordana Pasini joined Studio Legale Ferrini after completing her legal studies at the University of Florence. She has developed a reputation for her empathetic yet strategic approach to family law matters. Her practice focuses on divorce proceedings, child custody cases, domestic relations, and family mediation. Giordana is certified in collaborative law and family mediation, allowing her to help families resolve disputes outside of court when possible. She has successfully handled over 200 family law cases and is known for her ability to achieve favorable outcomes while minimizing emotional trauma for all parties involved.',
-        specializations: 'Family Law, Divorce Proceedings, Child Custody, Family Mediation',
-        education: 'J.D. University of Florence Law School',
-        admissions: 'Italian Bar Association, Certified Family Mediator',
+        specializations: [],
       },
-      vanessa: {
+      'vanessa-maraldi': {
         name: 'Vanessa Maraldi',
         title: 'Associate Lawyer',
         bio: 'Vanessa focuses on commercial law and intellectual property matters. Her analytical skills and attention to detail make her an invaluable asset to our business clients.',
         fullBio:
           'Vanessa Maraldi brings a fresh perspective to Studio Legale Ferrini with her expertise in commercial law and intellectual property. After graduating from the University of Milan Law School with honors, she completed an LLM in Intellectual Property Law. Her practice encompasses trademark and copyright protection, business formation, commercial contracts, and employment law. Vanessa has successfully represented both startups and established companies in various legal matters. She is fluent in English, Italian, and Spanish, making her particularly valuable for international business transactions. Her tech-savvy approach and understanding of digital business models make her the go-to lawyer for modern business challenges.',
-        specializations:
-          'Commercial Law, Intellectual Property, Business Formation, Employment Law',
-        education: 'J.D. University of Milan Law School (honors), LLM Intellectual Property Law',
-        admissions: 'Italian Bar Association, European Patent Attorney',
+        specializations: [],
       },
     },
     memberDetail: {
-      contactInformation: 'Contact Information',
-      specializations: 'Specializations',
-      education: 'Education',
-      barAdmissions: 'Bar Admissions & Certifications',
-      getInTouch: 'Get in Touch',
-      scheduleConsultation: 'Schedule a consultation with {name} to discuss your legal needs.',
-      backToTeam: 'Back to Team',
-      needLegalAssistance: 'Need Legal Assistance?',
-      teamReadyToHelp: 'Our experienced team is ready to help you with your legal needs.',
+      contactInformation: 'Informazioni di Contatto',
+      publications: 'Principali pubblicazioni',
+      reports: 'Principali interventi e relazioni',
+      specializations: 'Specializzazioni',
+      getInTouch: 'Contatta',
+      scheduleConsultation: 'Prenota una consulenza con {name} per discutere delle tue esigenze legali.',
+      backToTeam: 'Torna al Team',
+      needLegalAssistance: 'Hai Bisogno di Assistenza Legale?',
+      teamReadyToHelp: 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.',
     },
   },
 
@@ -183,8 +180,7 @@ export const en = {
   // Contact
   contact: {
     title: 'Contact Us',
-    description:
-      'Get in touch with our legal team for professional consultation and representation.',
+    description: 'Get in touch with our legal team for professional consultation and representation.',
     form: {
       name: 'Full Name',
       email: 'Email Address',
@@ -218,16 +214,14 @@ export const en = {
         subtitle: 'Cesena Office',
         address: 'Viale IV Novembre 145, 47522 Cesena FC',
         googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
-        description:
-          'The office is located on the 4th floor, with direct access from the convenient parking below.',
+        description: 'The office is located on the 4th floor, with direct access from the convenient parking below.',
         buildingPhoto: 'public/images/sede-cesena.png',
       },
       {
         subtitle: 'Forlì Office',
         address: 'Corso Giuseppe Garibaldi 29, 47121 Forlì FC',
         googleMapsUrl: 'https://maps.app.goo.gl/Ab9Z57XzvsPAoLK59',
-        description:
-          'The office is located in the heart of the city, just steps from the courthouse.',
+        description: 'The office is located in the heart of the city, just steps from the courthouse.',
       },
     ],
     transport: {

@@ -21,23 +21,17 @@ const currentPath = `${baseUrl}${lang}/team`;
 const teamMembers = [
   {
     id: 'luca-ferrini',
-    name: t.team.members.luca.name,
-    title: t.team.members.luca.title,
-    bio: t.team.members.luca.bio,
+    ...t.team.members['luca-ferrini'],
     image: ferriniImage,
   },
   {
     id: 'giordana-pasini',
-    name: t.team.members.giordana.name,
-    title: t.team.members.giordana.title,
-    bio: t.team.members.giordana.bio,
+    ...t.team.members['giordana-pasini'],
     image: giordanaImage,
   },
   {
     id: 'vanessa-maraldi',
-    name: t.team.members.vanessa.name,
-    title: t.team.members.vanessa.title,
-    bio: t.team.members.vanessa.bio,
+    ...t.team.members['vanessa-maraldi'],
     image: maraldiImage,
   },
 ];

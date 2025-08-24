@@ -48,8 +48,7 @@ export const it = {
         },
         {
           title: 'Reati stradali',
-          description:
-            'Assistenza qualificata per la difesa in procedimenti connessi a violazioni del codice della strada (guida in stato d’ebbrezza o sotto l’effetto di sostanze stupefacenti, lesioni o omicidi stradali, ecc.), con particolare attenzione alla tutela dei diritti della persona.',
+          description: `Assistenza qualificata per la difesa in procedimenti connessi a violazioni del codice della strada (guida in stato d'ebbrezza o sotto l'effetto di sostanze stupefacenti, lesioni o omicidi stradali, ecc.), con particolare attenzione alla tutela dei diritti della persona.`,
           icon: 'CarTaxiFront',
         },
         {
@@ -72,13 +71,11 @@ export const it = {
         },
         {
           title: "Diritto penale d'impresa",
-          description:
-            'Supporto mirato per società e manager nella prevenzione e gestione dei reati d’impresa, con particolare attenzione alla responsabilità amministrativa degli enti ex d.lgs. 231/2001.',
+          description: `Supporto mirato per società e manager nella prevenzione e gestione dei reati d'impresa, con particolare attenzione alla responsabilità amministrativa degli enti ex d.lgs. 231/2001.`,
         },
         {
           title: "Diritto dell'esecuzione penale e penitenziario",
-          description:
-            'Assistenza nei procedimenti di esecuzione della pena e nelle misure alternative, con l’obiettivo di garantire il rispetto della dignità e dei diritti del detenuto.',
+          description: `Assistenza nei procedimenti di esecuzione della pena e nelle misure alternative, con l'obiettivo di garantire il rispetto della dignità e dei diritti del detenuto.`,
         },
         {
           title: 'Diritto penale del lavoro',
@@ -110,58 +107,78 @@ export const it = {
     title: 'Professionisti legali per ogni esigenza',
     description:
       'Il nostro studio si fonda su competenza, integrità e dedizione, valori che guidano ogni nostra azione per garantire risultati eccellenti e una tutela personalizzata ai nostri clienti.',
+    memberDetail: {
+      contactInformation: 'Informazioni di Contatto',
+      publications: 'Principali pubblicazioni',
+      reports: 'Principali interventi e relazioni',
+      specializations: 'Specializzazioni',
+      getInTouch: 'Contatta',
+      scheduleConsultation: 'Prenota una consulenza con {name} per discutere delle tue esigenze legali.',
+      backToTeam: 'Torna al Team',
+      needLegalAssistance: 'Hai Bisogno di Assistenza Legale?',
+      teamReadyToHelp: 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.',
+    },
     members: {
-      luca: {
+      'luca-ferrini': {
         name: 'Luca Ferrini',
         title: 'Fondatore e Avvocato Senior',
         bio: 'Professionista con vasta esperienza in diritto penale societario e commerciale.',
-        fullBio:
-          "Luca Ferrini si è laureato summa cum laude presso la Facoltà di Giurisprudenza dell'Università di Bologna e pratica legge da oltre due decenni. È riconosciuto come uno dei principali avvocati civilisti della regione Emilia-Romagna. La sua esperienza spazia dalle controversie commerciali, al diritto contrattuale, alle transazioni immobiliari e al diritto societario. Luca ha gestito con successo casi del valore di milioni di euro ed è stato presentato in diverse pubblicazioni legali per il suo approccio innovativo a questioni legali complesse. È anche un relatore frequente in conferenze legali e funge da mentore per giovani avvocati.",
-        specializations:
-          'Contenzioso Civile, Diritto Commerciale, Diritto Immobiliare, Diritto Societario',
-        education: 'Laurea in Giurisprudenza, Università di Bologna (summa cum laude)',
-        admissions: "Ordine degli Avvocati d'Italia, Ordine degli Avvocati di Rimini",
+        fullBio: `
+          <p>Classe 1974, dopo la licenza liceale classica si laurea all'Università di Bologna, Facoltà di
+          Giurisprudenza, nella sessione accademica 1997/1998, discutendo una tesi sul <em>Danno
+          Informatico</em> con il Prof. Ugo Ruffolo.</p>
+          
+          <p>Svolge la pratica legale presso lo studio dell'Avv. Carlo Piccoli di Cesena e, dopo il servizio
+          militare nell'Arma di Artiglieria, dal 2000 al 2003, frequenta lo studio del Prof. Avv. Nicola
+          Mazzacuva, Ordinario di Diritto Penale nell'Università di Bologna.</p>
+          
+          <p>Abilitato al Patrocinio di fronte all'Ecc.ma Suprema Corte di cassazione, è stato
+          Vicepresidente dell'Ordine degli Avvocati e consigliere della Fondazione Forense "Fontana
+          Elliot".</p>
+          
+          <p>Svolge lezioni al corso di preparazione all'esame di avvocato organizzato nell'ambito della
+          Scuola Forense di Forlì-Cesena, nonché a quello di abilitazione al ruolo di difensore
+          d'ufficio organizzato dalla Camera Penale della Romagna.</p>
+          
+          <p>Attualmente, è al secondo mandato come assessore al comune di Cesena, con delega
+          alla Sicurezza.</p>
+          
+          <p>Ha all'attivo pubblicazioni scientifiche in ambito giuridico.</p>
+        `,
+        publications: [
+          `Le sanzioni amministrative accessorie all'accertamento dei reati in materia di circolazione stradale, in "I reati in materia di circolazione stradale", CEDAM, 2016, a cura di Trinci e Balzani, Cap.II, pp. 522-616.`,
+          `L'uso di gruppo di stupefacenti esclusivamente personale; in "Rivista Penale", 2012, n. 9, p. 817 e ss.`,
+          `Nuovi profili interpretativi dell'art. 80 comma 2 D.P.R. n. 309/90, in "Rivista Penale", 2011, n.7-8 p. 740 e ss.`,
+        ],
+        specializations: [
+          'Reati fallimentari',
+          'Reati tributari',
+          "Diritto penale d'impresa (responsabilità degli enti d. lgs. 231/2001)",
+        ],
       },
-      giordana: {
+      'giordana-pasini': {
         name: 'Giordana Pasini',
         title: 'Avvocato',
         bio: 'Approccio innovativo e soluzioni mirate ai clienti.',
         fullBio:
           "Giordana Pasini si è unita allo Studio Legale Ferrini dopo aver completato i suoi studi legali presso l'Università di Firenze. Ha sviluppato una reputazione per il suo approccio empatico ma strategico alle questioni di diritto di famiglia. La sua pratica si concentra su procedimenti di divorzio, casi di custodia dei figli, relazioni domestiche e mediazione familiare. Giordana è certificata in diritto collaborativo e mediazione familiare, permettendole di aiutare le famiglie a risolvere le controversie fuori dal tribunale quando possibile. Ha gestito con successo oltre 200 casi di diritto di famiglia ed è nota per la sua capacità di ottenere risultati favorevoli minimizzando il trauma emotivo per tutte le parti coinvolte.",
-        specializations:
-          'Diritto di Famiglia, Procedimenti di Divorzio, Custodia dei Figli, Mediazione Familiare',
-        education: 'Laurea in Giurisprudenza, Università di Firenze',
-        admissions: "Ordine degli Avvocati d'Italia, Mediatore Familiare Certificato",
+        specializations: [''],
       },
-      vanessa: {
+      'vanessa-maraldi': {
         name: 'Vanessa Maraldi',
         title: 'Avvocato',
-        bio: 'Dottore di Ricerca, collabora stabilmente con la cattedra di Procedura penale dell’Università di Bologna.',
+        bio: `Dottore di Ricerca, collabora stabilmente con la cattedra di Procedura penale dell'Università di Bologna.`,
         fullBio:
           "Vanessa Maraldi porta una prospettiva fresca allo Studio Legale Ferrini con la sua esperienza nel diritto commerciale e proprietà intellettuale. Dopo essersi laureata con lode presso la Facoltà di Giurisprudenza dell'Università di Milano, ha completato un LLM in Diritto della Proprietà Intellettuale. La sua pratica comprende protezione di marchi e diritti d'autore, costituzione di società, contratti commerciali e diritto del lavoro. Vanessa ha rappresentato con successo sia startup che aziende consolidate in varie questioni legali. È fluente in inglese, italiano e spagnolo, rendendola particolarmente preziosa per transazioni commerciali internazionali. Il suo approccio tecnologico e la comprensione dei modelli di business digitali la rendono l'avvocato di riferimento per le sfide aziendali moderne.",
-        specializations:
-          'Diritto Commerciale, Proprietà Intellettuale, Costituzione Società, Diritto del Lavoro',
-        education:
-          'Laurea in Giurisprudenza, Università di Milano (lode), LLM Diritto Proprietà Intellettuale',
-        admissions: "Ordine degli Avvocati d'Italia, Mandatario Brevetti Europeo",
+        specializations: [''],
       },
-    },
-    memberDetail: {
-      contactInformation: 'Informazioni di Contatto',
-      getInTouch: 'Contatta',
-      scheduleConsultation:
-        'Prenota una consulenza con {name} per discutere delle tue esigenze legali.',
-      backToTeam: 'Torna al Team',
-      needLegalAssistance: 'Hai Bisogno di Assistenza Legale?',
-      teamReadyToHelp: 'Il nostro team esperto è pronto ad aiutarti con le tue esigenze legali.',
     },
   },
 
   // FAQ
   faq: {
     title: 'Domande Frequenti',
-    description:
-      'Trova risposte alle domande legali più comuni e scopri di più sui nostri servizi.',
+    description: 'Trova risposte alle domande legali più comuni e scopri di più sui nostri servizi.',
     items: [
       {
         question: 'In quali aree del diritto siete specializzati?',
@@ -191,16 +208,14 @@ export const it = {
     ],
     cta: {
       title: 'Hai ancora domande?',
-      description:
-        'Il nostro team legale è qui per aiutarti. Contattaci per una consulenza personalizzata.',
+      description: 'Il nostro team legale è qui per aiutarti. Contattaci per una consulenza personalizzata.',
     },
   },
 
   // Contact
   contact: {
     title: 'Contatti',
-    description:
-      'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
+    description: 'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
     form: {
       name: 'Nome e Cognome',
       email: 'Indirizzo Email',
@@ -228,8 +243,7 @@ export const it = {
         subtitle: 'Sede di Cesena',
         address: 'Viale IV Novembre 145, 47522 Cesena FC',
         googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
-        description:
-          'La sede si trova al 4° piano, con accesso diretto dal comodo parcheggio sottostante.',
+        description: 'La sede si trova al 4° piano, con accesso diretto dal comodo parcheggio sottostante.',
         buildingPhoto: 'sedeCesenaImage',
       },
       {

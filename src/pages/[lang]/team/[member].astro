@@ -11,9 +11,11 @@ import ferriniLongImage from '/public/images/ferrini-long.png';
 import giordanaLongImage from '/public/images/giordana-long.png';
 import maraldiLongImage from '/public/images/maraldi-long.png';
 
+// This is a static paths function to generate pages for each team member in each language
+// It can't use memberData directly because Astro needs to statically analyze the return value
 export async function getStaticPaths() {
-  const members = ['luca-ferrini', 'giordana-pasini', 'vanessa-maraldi'];
   const languages = ['en', 'it'];
+  const members = ['luca-ferrini', 'giordana-pasini', 'vanessa-maraldi'];
 
   return languages.flatMap(lang =>
     members.map(member => ({
@@ -30,33 +32,15 @@ const currentPath = `${baseUrl}${lang}/team/${member}`;
 // Get member data
 const memberData = {
   'luca-ferrini': {
-    name: t.team.members.luca.name,
-    title: t.team.members.luca.title,
-    bio: t.team.members.luca.bio,
-    fullBio: t.team.members.luca.fullBio,
-    specializations: t.team.members.luca.specializations,
-    education: t.team.members.luca.education,
-    admissions: t.team.members.luca.admissions,
+    ...t.team.members['luca-ferrini'],
     image: ferriniLongImage,
   },
   'giordana-pasini': {
-    name: t.team.members.giordana.name,
-    title: t.team.members.giordana.title,
-    bio: t.team.members.giordana.bio,
-    fullBio: t.team.members.giordana.fullBio,
-    specializations: t.team.members.giordana.specializations,
-    education: t.team.members.giordana.education,
-    admissions: t.team.members.giordana.admissions,
+    ...t.team.members['giordana-pasini'],
     image: giordanaLongImage,
   },
   'vanessa-maraldi': {
-    name: t.team.members.vanessa.name,
-    title: t.team.members.vanessa.title,
-    bio: t.team.members.vanessa.bio,
-    fullBio: t.team.members.vanessa.fullBio,
-    specializations: t.team.members.vanessa.specializations,
-    education: t.team.members.vanessa.education,
-    admissions: t.team.members.vanessa.admissions,
+    ...t.team.members['vanessa-maraldi'],
     image: maraldiLongImage,
   },
 };
@@ -101,14 +85,12 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
           <!-- Photo -->
           <div class="lg:col-span-1">
             <div class="sticky top-8">
-              <Image
+                <Image
                 src={currentMember.image}
                 alt={currentMember.name}
-                class="w-full rounded-xl shadow-lg"
+                class="w-full rounded-xl shadow-lg object-cover object-top max-h-[350px] sm:max-h-[500px]"
                 loading="eager"
-                width={400}
-                height={600}
-              />
+                />
               <div class="mt-6 bg-gray-50 rounded-xl p-6">
                 <h3 class="text-lg font-semibold text-navy mb-4">
                   {t.team.memberDetail.contactInformation}
@@ -147,11 +129,34 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
             </p>
 
             <!-- Full Bio -->
-            <div class="prose prose-lg max-w-none mb-12">
-              <p class="text-gray-700 leading-relaxed">
-                {currentMember.fullBio}
-              </p>
+            <div class="leading-relaxed prose prose-lg max-w-none mb-12 text-gray-700" set:html={currentMember.fullBio}>
             </div>
+
+            {currentMember.publications && (
+              <div class="mb-8">
+              <h3 class="text-2xl font-bold text-navy mb-4">
+                {t.team.memberDetail.publications}
+              </h3>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                {currentMember.publications.map(pub => (
+                  <li>{pub}</li>
+                ))}
+                </ul>
+              </div>
+            )}
+            
+            {currentMember.specializations && (
+              <div class="mb-8">
+              <h3 class="text-2xl font-bold text-navy mb-4">
+                {t.team.memberDetail.specializations}
+              </h3>
+              <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                {currentMember.specializations.map(pub => (
+                  <li>{pub}</li>
+                ))}
+                </ul>
+              </div>
+            )}
 
             <!-- Contact CTA -->
             <div class="bg-gray-50 rounded-xl p-8">
