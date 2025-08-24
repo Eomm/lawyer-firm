@@ -19,12 +19,7 @@ const t = getTranslations(lang);
 const currentPath = `${baseUrl}${lang}/where-we-are`;
 ---
 
-<Layout
-  title={t.whereWeAre.title}
-  description={t.whereWeAre.description}
-  lang={lang}
-  currentPath={currentPath}
->
+<Layout title={t.whereWeAre.title} description={t.whereWeAre.description} lang={lang} currentPath={currentPath}>
   <Header lang={lang} currentPath={currentPath} />
 
   <main>
@@ -82,9 +77,7 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
                 ))
               }
               <div class="flex items-start mb-4">
-                <div
-                  class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0"
-                >
+                <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <Icon name="Clock" class="w-6 h-6 text-gold" size={24} />
                 </div>
                 <div>

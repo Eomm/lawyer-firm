@@ -65,10 +65,4 @@ if (!IconComponent) {
 }
 ---
 
-{
-  IconComponent ? (
-    <IconComponent size={size} class={className} />
-  ) : (
-    <Scale size={size} class={className} />
-  )
-}
+{IconComponent ? <IconComponent size={size} class={className} /> : <Scale size={size} class={className} />}
