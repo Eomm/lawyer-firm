@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import './Header.css';
 
 // Import logo
-import logoSvg from '/public/logo.svg';
+import logoSvg from '/public/images/main-logo.png';
 
 export interface Props {
   lang: Language;
@@ -33,7 +33,7 @@ const langSwitchPath = currentPath.replace(`${baseUrl}${lang}`, `${baseUrl}${oth
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href={`${baseUrl}${lang}`} class="flex items-center space-x-3">
-          <Image src={logoSvg} alt="Studio Legale Ferrini Logo" class="h-20 w-20" width={80} height={80} />
+          <Image src={logoSvg} alt="Studio Legale Ferrini Logo" height={64} />
           <span class="text-xl font-bold text-navy">Studio Legale Ferrini</span>
         </a>
       </div>
