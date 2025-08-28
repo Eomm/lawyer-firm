@@ -47,10 +47,9 @@ const memberData = {
 
 const currentMember = memberData[member as keyof typeof memberData];
 const pageTitle = `${currentMember.name} - ${t.team.title}`;
-const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio Legale Ferrini. ${currentMember.bio}`;
 ---
 
-<Layout title={pageTitle} description={pageDescription} lang={lang} currentPath={currentPath}>
+<Layout title={pageTitle} description={currentMember.seo} lang={lang} currentPath={currentPath}>
   <Header lang={lang} currentPath={currentPath} />
 
   <main>

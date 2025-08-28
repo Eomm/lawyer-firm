@@ -20,6 +20,7 @@ export const it = {
   // Homepage
   home: {
     title: 'Studio Legale Ferrini - Servizi Legali Professionali',
+    seo: "Avvocati penalisti esperti a Cesena e Forlì. Studio legale specializzato in diritto penale, reati stradali e diritto penale d'impresa con oltre 25 anni di esperienza.",
     description: 'Rappresentanza legale esperta a Cesena e Rimini. Specializzati in diritto penale da oltre 25 anni.',
     hero: {
       title: 'Diritto penale, il nostro lavoro da 25 anni',
@@ -95,6 +96,7 @@ export const it = {
   // Team
   team: {
     title: 'Professionisti legali per ogni esigenza',
+    seo: "Avvocati penalisti qualificati dello Studio Legale Ferrini. Team di professionisti esperti in diritto penale, reati stradali e diritto penale d'impresa a Cesena e Forlì.",
     description:
       'Il nostro studio si fonda su competenza, integrità e dedizione, valori che guidano ogni nostra azione per garantire risultati eccellenti e una tutela personalizzata ai nostri clienti.',
     memberDetail: {
@@ -114,6 +116,7 @@ export const it = {
         email: 'luca.ferrini@studiolegaleferrini.com',
         title: 'Fondatore e Avvocato Senior',
         bio: 'Professionista con vasta esperienza in diritto penale societario e commerciale.',
+        seo: "Avvocato Luca Ferrini - Fondatore Studio Legale Ferrini. Esperto in diritto penale d'impresa, reati fallimentari e tributari. Oltre 25 anni di esperienza legale a Cesena.",
         fullBio: `
           <p>Classe 1974, dopo la licenza liceale classica si laurea all'Università di Bologna, Facoltà di
           Giurisprudenza, nella sessione accademica 1997/1998, discutendo una tesi sul <em>Danno
@@ -152,6 +155,7 @@ export const it = {
         email: 'avv.giordana.pasini@gmail.com',
         title: 'Avvocato',
         bio: 'Approccio innovativo e soluzioni mirate ai clienti.',
+        seo: "Avvocato Giordana Pasini - Specialista in diritto penale familiare, reati stradali e patrimoniali. Esperta in cyberbullismo e gioco d'azzardo patologico a Cesena.",
         fullBio: `
 <p>Classe 1981, dopo la licenza liceale classica conseguita presso il Liceo Classico Vincenzo
 Monti di Cesena, si laurea all'Università di Bologna, Facoltà di Giurisprudenza, nella
@@ -183,6 +187,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
         email: 'maraldivanessa@gmail.com',
         title: 'Avvocato',
         bio: `Tutela degli interessi degli assistiti con dedizione e competenza.`,
+        seo: 'Avvocato Vanessa Maraldi - Dottore di Ricerca in Procedura Penale, specialista in misure di prevenzione e diritto penale. Pubblicazioni scientifiche.',
         fullBio: `
 <p>Classe 1994, dopo aver conseguito il diploma di maturità presso l'ITC Renato Serra di
 Cesena con votazione 100 e lode, si laurea con lode nel maggio del 2018 all'Università di
@@ -235,6 +240,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
   // FAQ
   faq: {
     title: 'Domande Frequenti',
+    seo: 'Domande frequenti su servizi legali e diritto penale. Consulenza avvocato penalista a Cesena e Forlì - Studio Legale Ferrini.',
     description: 'Trova risposte alle domande legali più comuni e scopri di più sui nostri servizi.',
     items: [
       {
@@ -272,6 +278,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
   // Contact
   contact: {
     title: 'Contatti',
+    seo: 'Contatta Studio Legale Ferrini per consulenza legale. Avvocati penalisti a Cesena e Forlì specializzati in diritto penale e assistenza legale.',
     description: 'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
     form: {
       name: 'Nome e Cognome',
@@ -291,6 +298,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
   // Where We Are
   whereWeAre: {
     title: 'Dove siamo',
+    seo: 'Studio Legale Ferrini - Sedi a Cesena e Forlì. Avvocati penalisti esperti, consulenze legali in diritto penale e assistenza professionale.',
     description: 'Visita il nostro studio per una consulenza legale professionale.',
     locationsTitle: 'Le nostre sedi',
     locations: [

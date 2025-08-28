@@ -20,6 +20,7 @@ export const en = {
   // Homepage
   home: {
     title: 'Ferrini Law Firm - Professional Legal Services',
+    seo: 'Expert criminal lawyers in Cesena and Forlì. Law firm specialized in criminal law, traffic offenses and corporate criminal law with over 25 years of experience.',
     description: 'Expert legal representation in Cesena and Rimini. Specialized in criminal law for over 25 years.',
     hero: {
       title: 'Criminal law, our work for 25 years',
@@ -94,6 +95,7 @@ export const en = {
   // Team
   team: {
     title: 'Legal professionals for every need',
+    seo: 'Qualified criminal lawyers from Ferrini Law Firm. Team of professionals expert in criminal law, traffic offenses and corporate criminal law in Cesena and Forlì.',
     description:
       'Our firm is founded on competence, integrity and dedication, values that guide our every action to ensure excellent results and personalized protection for our clients.',
     memberDetail: {
@@ -113,6 +115,7 @@ export const en = {
         email: 'luca.ferrini@studiolegaleferrini.com',
         title: 'Founder and Senior Lawyer',
         bio: 'Professional with extensive experience in corporate and commercial criminal law.',
+        seo: 'Lawyer Luca Ferrini - Founder of Ferrini Law Firm. Expert in corporate criminal law, bankruptcy and tax crimes. Over 25 years of legal experience in Cesena.',
         fullBio: `
           <p>Born in 1974, after graduating from classical high school, he graduated from the University of Bologna, Faculty of Law, in the academic session 1997/1998, discussing a thesis on <em>Computer Damage</em> with Prof. Ugo Ruffolo.</p>
           
@@ -142,6 +145,7 @@ export const en = {
         email: 'avv.giordana.pasini@gmail.com',
         title: 'Lawyer',
         bio: 'Innovative approach and targeted solutions for clients.',
+        seo: 'Lawyer Giordana Pasini - Specialist in family criminal law, traffic crimes and property offenses. Expert in cyberbullying and pathological gambling in Cesena.',
         fullBio: `
 <p>Born in 1981, after graduating from classical high school at the Vincenzo Monti Classical High School in Cesena, she graduated from the University of Bologna, Faculty of Law, in the academic session 2006/2007, discussing a thesis entitled "Women in Criminal Law" with Prof. Lawyer Nicola Mazzacuva, Professor of Criminal Law.</p>
 <p>She carried out her legal practice at the office of Lawyer Luca Ferrini in Cesena and deepened and specialized, from the beginning, in the treatment of criminal matters.</p>
@@ -163,6 +167,7 @@ export const en = {
         email: 'maraldivanessa@gmail.com',
         title: 'Lawyer',
         bio: `Protection of clients' interests with dedication and competence.`,
+        seo: 'Lawyer Vanessa Maraldi - PhD in Criminal Procedure, specialist in prevention measures and criminal law. University professor and scientific publications.',
         fullBio: `
 <p>Born in 1994, after obtaining her high school diploma at ITC Renato Serra in Cesena with a grade of 100 cum laude, she graduated cum laude in May 2018 from the University of Bologna, Faculty of Law, Ravenna campus, with a thesis entitled "The abbreviated trial in light of recent modifications" discussed with Prof. Elena Valentini, Associate Professor of Criminal Procedure.</p>
 <p>Simultaneously with her legal practice at the office of Lawyer Luca Ferrini in Cesena, she pursued a PhD in Legal Sciences, Criminal Procedure track, at the University of Bologna, Faculty of Law.</p>
@@ -198,6 +203,7 @@ export const en = {
   // FAQ
   faq: {
     title: 'Frequently Asked Questions',
+    seo: 'Frequently asked questions about legal services and criminal law. Criminal lawyer consultation in Cesena and Forlì - Ferrini Law Firm.',
     description: 'Find answers to common legal questions and learn more about our services.',
     items: [
       {
@@ -235,6 +241,7 @@ export const en = {
   // Contact
   contact: {
     title: 'Contact Us',
+    seo: 'Contact Ferrini Law Firm for legal consultation. Criminal lawyers in Cesena and Forlì specialized in criminal law and legal assistance.',
     description: 'Get in touch with our legal team for professional advice and representation.',
     form: {
       name: 'Full Name',
@@ -254,6 +261,7 @@ export const en = {
   // Where We Are
   whereWeAre: {
     title: 'Where We Are',
+    seo: 'Ferrini Law Firm - Offices in Cesena and Forlì. Expert criminal lawyers, legal consultations in criminal law and professional assistance.',
     description: 'Visit our office for professional legal consultation.',
     locationsTitle: 'Our Offices',
     locations: [
