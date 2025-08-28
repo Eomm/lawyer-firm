@@ -87,25 +87,29 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 alt={currentMember.name}
                 class="w-full rounded-xl shadow-lg object-cover object-top max-h-[350px] sm:max-h-[500px]"
                 loading="eager"
+                fetchpriority="high"
               />
               <div class="mt-6 bg-gray-50 rounded-xl p-6">
                 <h3 class="text-lg font-semibold text-navy mb-4">
                   {t.team.memberDetail.contactInformation}
                 </h3>
                 <div class="space-y-3 text-sm">
-                  <div class="flex items-center">
+                  <!-- <div class="flex items-center">
                     <Icon name="Phone" class="w-4 h-4 mr-3 text-gold flex-shrink-0" size={16} />
-                    <a href="tel:+390541123456" class="text-navy hover:text-gold transition-colors duration-200">
-                      +39 0541 123456
+                    <a
+                      href={`tel:${t.home.cta.phone}`}
+                      class="text-navy hover:text-gold transition-colors duration-200"
+                    >
+                      {t.home.cta.phone}
                     </a>
-                  </div>
+                  </div> -->
                   <div class="flex items-center">
                     <Icon name="Mail" class="w-4 h-4 mr-3 text-gold flex-shrink-0" size={16} />
                     <a
-                      href="mailto:info@studiolegaleferrini.com"
+                      href=`mailto:${currentMember.email}`
                       class="text-navy hover:text-gold transition-colors duration-200"
                     >
-                      info@studiolegaleferrini.com
+                      {currentMember.email}
                     </a>
                   </div>
                 </div>
@@ -142,6 +146,19 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
             }
 
             {
+              currentMember.reports && (
+                <div class="mb-8">
+                  <h3 class="text-2xl font-bold text-navy mb-4">{t.team.memberDetail.reports}</h3>
+                  <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                    {currentMember.reports.map(pub => (
+                      <li>{pub}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            }
+
+            {
               currentMember.specializations && (
                 <div class="mb-8">
                   <h3 class="text-2xl font-bold text-navy mb-4">{t.team.memberDetail.specializations}</h3>
@@ -163,9 +180,10 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
                 {t.team.memberDetail.scheduleConsultation.replace('{name}', currentMember.name)}
               </p>
               <a
-                href={`${baseUrl}${lang}/contact`}
-                class="inline-block bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
+                href=`mailto:${currentMember.email}`
+                class="inline-flex items-center justify-center bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
               >
+                <Icon name="Mail" class="w-4 h-4 mr-2" size={16} />
                 {t.common.bookConsultation}
               </a>
             </div>
