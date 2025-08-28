@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { type Language } from '@/i18n';
+import { getTranslations, type Language } from '@/i18n';
 
 export interface Props {
   title: string;
@@ -12,32 +12,30 @@ export interface Props {
 const { title, description, lang, currentPath = '' } = Astro.props;
 
 const baseUrl = import.meta.env.BASE_URL || '';
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://studiolegaleferrini.com';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://studiolegaleferrini.com/';
 const fullUrl = `${siteUrl}${currentPath}`;
+const t = getTranslations(lang);
 
-// Structured data for LocalBusiness
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LegalService',
   name: 'Studio Legale Ferrini',
-  description:
-    'Professional legal services in Rimini, Italy. Specialized in civil law, commercial law, and family law.',
+  description: 'Rappresentanza legale esperta a Cesena e Rimini. Specializzati in diritto penale da oltre 25 anni.',
   url: siteUrl,
-  telephone: '+39 0541 123456',
-  email: 'info@studiolegaleferrini.com',
+  telephone: t.home.cta.phone,
+  email: t.footer.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Via Roma 123',
-    addressLocality: 'Rimini',
-    postalCode: '47921',
-    addressRegion: 'RN',
+    streetAddress: t.whereWeAre.locations[0].address,
+    addressLocality: 'Cesena',
+    postalCode: '47522',
+    addressRegion: 'FC',
     addressCountry: 'IT',
   },
-  openingHours: ['Mo-Fr 09:00-18:00', 'Sa 09:00-13:00'],
   areaServed: 'Emilia-Romagna, Italy',
   founder: {
     '@type': 'Person',
-    name: 'Luca Ferrini',
+    name: 'Avv. Luca Ferrini',
   },
 };
 ---
@@ -71,7 +69,7 @@ const structuredData = {
     <meta property="og:url" content={fullUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteUrl}/images/og-image.jpg`} />
+    <meta property="og:image" content={`${siteUrl}/images/gustice.avif`} />
     <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'it_IT'} />
 
     <!-- Twitter -->
@@ -79,7 +77,18 @@ const structuredData = {
     <meta property="twitter:url" content={fullUrl} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={`${siteUrl}/images/og-image.jpg`} />
+    <meta property="twitter:image" content={`${siteUrl}/images/gustice.avif`} />
+
+    <!-- Telegram -->
+    <meta property="telegram:image" content={`${siteUrl}/images/gustice.avif`} />
+    <meta property="telegram:title" content={title} />
+    <meta property="telegram:description" content={description} />
+
+    <!-- WhatsApp (uses Open Graph but these help with better previews) -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content="Studio Legale Ferrini" />
 
     <!-- Structured Data -->
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />

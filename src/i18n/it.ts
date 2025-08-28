@@ -20,8 +20,7 @@ export const it = {
   // Homepage
   home: {
     title: 'Studio Legale Ferrini - Servizi Legali Professionali',
-    description:
-      'Rappresentanza legale esperta a Rimini. Specializzati in diritto civile, commerciale e di famiglia. Contattaci per una consulenza legale professionale.',
+    description: 'Rappresentanza legale esperta a Cesena e Rimini. Specializzati in diritto penale da oltre 25 anni.',
     hero: {
       title: 'Diritto penale, il nostro lavoro da 25 anni',
       subtitle:

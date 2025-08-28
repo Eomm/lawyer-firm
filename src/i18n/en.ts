@@ -20,8 +20,7 @@ export const en = {
   // Homepage
   home: {
     title: 'Ferrini Law Firm - Professional Legal Services',
-    description:
-      'Expert legal representation in Rimini. Specialized in civil, commercial, and family law. Contact us for professional legal advice.',
+    description: 'Expert legal representation in Cesena and Rimini. Specialized in criminal law for over 25 years.',
     hero: {
       title: 'Criminal law, our work for 25 years',
       subtitle:
