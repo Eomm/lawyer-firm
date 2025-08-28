@@ -243,18 +243,14 @@ export const en = {
     title: 'Contact Us',
     seo: 'Contact Ferrini Law Firm for legal consultation. Criminal lawyers in Cesena and Forlì specialized in criminal law and legal assistance.',
     description: 'Get in touch with our legal team for professional advice and representation.',
-    form: {
-      name: 'Full Name',
-      email: 'Email Address',
-      phone: 'Phone Number',
-      message: 'Message',
-      submit: 'Send Message',
-      required: 'Required',
-    },
     info: {
       title: 'Contact Us',
+      subtitle: 'Send us an email to receive help',
       description:
-        'Fill out the form briefly describing what happened, so we can offer you targeted guidance from the first appointment. You will be contacted as soon as possible by our team.',
+        'To provide you with the best possible assistance from the first appointment, include the following information in your email:',
+      instructions: ['Full Name', 'Phone Number', 'Brief description of what happened'],
+      notes: 'You will be contacted as soon as possible by our team. Note that our team will speak Italian.',
+      submit: 'Send Message',
     },
   },
 

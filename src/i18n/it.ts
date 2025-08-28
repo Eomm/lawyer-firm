@@ -280,18 +280,18 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     title: 'Contatti',
     seo: 'Contatta Studio Legale Ferrini per consulenza legale. Avvocati penalisti a Cesena e Forlì specializzati in diritto penale e assistenza legale.',
     description: 'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
-    form: {
-      name: 'Nome e Cognome',
-      email: 'Indirizzo Email',
-      phone: 'Numero di Telefono',
-      message: 'Messaggio',
-      submit: 'Invia Messaggio',
-      required: 'Obbligatorio',
-    },
     info: {
       title: 'Contattaci',
+      subtitle: 'Inviaci una email per ricevere aiuto',
       description:
-        'Compila il modulo indicando brevemente cosa è accaduto, così potremo offrirti un orientamento mirato fin dal primo appuntamento. Verrai ricontattato al più presto dal nostro team.',
+        'Per fornirti la migliore assistenza possibile fin dal primo appuntamento, includi nella tua email le seguenti informazioni:',
+      instructions: [
+        'Nome e Cognome', //
+        'Numero di Telefono',
+        'Breve descrizione di cosa è accaduto',
+      ],
+      notes: 'Verrai ricontattato al più presto dal nostro team.',
+      submit: 'Invia Messaggio',
     },
   },
 
