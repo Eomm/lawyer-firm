@@ -14,16 +14,7 @@ export const it = {
     bookConsultation: 'Prenota una Consulenza',
     phone: 'Telefono',
     email: 'Email',
-    address: 'Indirizzo',
     officeHours: 'Orari di Apertura',
-    monday: 'Lunedì',
-    tuesday: 'Martedì',
-    wednesday: 'Mercoledì',
-    thursday: 'Giovedì',
-    friday: 'Venerdì',
-    saturday: 'Sabato',
-    sunday: 'Domenica',
-    closed: 'Chiuso',
   },
 
   // Homepage
@@ -302,8 +293,6 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
   whereWeAre: {
     title: 'Dove siamo',
     description: 'Visita il nostro studio per una consulenza legale professionale.',
-    mapTitle: 'Posizione Studio Legale Ferrini',
-    mapLoading: 'Caricamento Mappa...',
     locationsTitle: 'Le nostre sedi',
     locations: [
       {
@@ -332,7 +321,6 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     description: 'Servizi legali professionali con oltre 25 anni di esperienza nel diritto penale.',
     quickLinks: 'Link',
     address: 'Viale IV Novembre 145, 47522 Cesena FC',
-    phone: '0547 29 180',
     email: 'info@studiolegaleferrini.com',
     copyright: 'Tutti i diritti riservati.',
     privacyPolicy: 'Privacy Policy',
