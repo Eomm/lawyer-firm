@@ -76,7 +76,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
     </nav>
 
     <!-- Profile Section -->
-    <section class="py-20">
+    <section class="py-6">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <!-- Photo -->
@@ -128,7 +128,7 @@ const pageDescription = `${currentMember.name}, ${currentMember.title} at Studio
 
             <!-- Full Bio -->
             <div
-              class="leading-relaxed prose prose-lg max-w-none mb-12 text-gray-700"
+              class="leading-relaxed prose prose-lg max-w-none mb-12 text-gray-700 [&>p]:mb-4"
               set:html={currentMember.fullBio}
             />
 
