@@ -103,7 +103,7 @@ export const it = {
       contactInformation: 'Informazioni di Contatto',
       publications: 'Principali pubblicazioni',
       reports: 'Principali interventi e relazioni',
-      specializations: 'Specializzazioni',
+      specializations: 'Aree di attività prevalente',
       getInTouch: 'Contatta',
       scheduleConsultation: 'Prenota una consulenza con {name} per discutere delle tue esigenze legali.',
       backToTeam: 'Torna al Team',
@@ -244,9 +244,9 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     description: 'Trova risposte alle domande legali più comuni e scopri di più sui nostri servizi.',
     items: [
       {
-        question: 'In quali aree del diritto siete specializzati?',
+        question: 'Di quali aree del diritto vi occupate prevalente?',
         answer:
-          'Il nostro studio è specializzato in diritto civile, commerciale, di famiglia, immobiliare e proprietà intellettuale. Abbiamo una vasta esperienza in contenzioso, negoziazione contrattuale e consulenza legale in queste aree di pratica.',
+          'Il nostro studio si occupa in diritto civile, commerciale, di famiglia, immobiliare e proprietà intellettuale. Abbiamo una vasta esperienza in contenzioso, negoziazione contrattuale e consulenza legale in queste aree di pratica.',
       },
       {
         question: 'Quanto costano i vostri servizi?',
