@@ -43,16 +43,16 @@ export const it = {
           icon: 'CarTaxiFront',
         },
         {
-          title: 'Diritto penale criminale',
-          description:
-            'Difesa solida e strategica nei procedimenti per reati contro la persona e il patrimonio, sempre orientata a garantire il giusto processo.',
-          icon: 'Shield',
-        },
-        {
           title: 'Diritto penale tributario',
           description:
             'Offriamo consulenza precisa per gestire complesse questioni fiscali con trasparenza e competenza.',
-          // icon: 'FileText',
+          icon: 'FileText',
+        },
+        {
+          title: 'Diritto penale criminale',
+          description:
+            'Difesa solida e strategica nei procedimenti per reati contro la persona e il patrimonio, sempre orientata a garantire il giusto processo.',
+          // icon: 'Shield',
         },
         {
           title: 'Diritto penale fallimentare',
