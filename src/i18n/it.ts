@@ -246,29 +246,35 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     description: 'Trova risposte alle domande legali più comuni e scopri di più sui nostri servizi.',
     items: [
       {
+        question: 'Gestite casi fuori da Cesena e Forlì?',
+        answer: "Sì, assistiamo i nostri clienti in tutti i tribunali d'Italia.",
+      },
+      {
         question: 'Di quali aree del diritto vi occupate prevalente?',
+        answer: 'Siamo specializzati in diritto penale, in tutte le sue articolazioni.',
+      },
+      {
+        question: 'Cosa si intende per gratuito patrocinio e chi può averne diritto?',
         answer:
-          'Il nostro studio si occupa in diritto civile, commerciale, di famiglia, immobiliare e proprietà intellettuale. Abbiamo una vasta esperienza in contenzioso, negoziazione contrattuale e consulenza legale in queste aree di pratica.',
+          "Conosciuto anche come patrocinio a spese dello stato, è un istituto che consente alle persone di farsi assistere da un avvocato senza costi. L'accesso dipende dal rispetto di specifici requisiti di reddito o di materia previsti dalla legge.",
+      },
+      {
+        question: "Cosa si intende per difesa d'ufficio?",
+        answer: "È la nomina di un avvocato da parte dello Stato quando l'imputato non ne ha uno di fiducia.",
+      },
+      {
+        question: "Il difensore d'ufficio deve essere pagato?",
+        answer:
+          "Sì, il difensore d'ufficio ha diritto a un compenso così come il difensore di fiducia, salvo che l'assistito non abbia i requisiti per accedere al gratuito patrocinio.",
+      },
+      {
+        question: 'Come posso fissare un appuntamento?',
+        answer: 'Puoi contattarci telefonicamente, via email o chat. Trovi tutti i nostri riferimenti sul sito web.',
       },
       {
         question: 'Quanto costano i vostri servizi?',
         answer:
           'Le nostre tariffe variano a seconda della complessità e natura del vostro caso. Offriamo prezzi trasparenti e forniremo un preventivo dettagliato dopo la nostra consulenza iniziale. Offriamo anche accordi di pagamento flessibili quando appropriato.',
-      },
-      {
-        question: 'Offrite consulenze gratuite?',
-        answer:
-          'Offriamo una consulenza iniziale di 30 minuti per discutere le vostre esigenze legali e determinare come possiamo assistervi al meglio. Questo ci permette di comprendere la vostra situazione e fornire una guida preliminare.',
-      },
-      {
-        question: 'Quanto tempo richiede tipicamente un caso?',
-        answer:
-          'La durata di un caso dipende dalla sua complessità e dalle specifiche questioni legali coinvolte. Questioni semplici possono essere risolte in poche settimane, mentre contenziosi complessi possono richiedere diversi mesi o anni. Forniremo tempistiche realistiche durante la nostra consulenza.',
-      },
-      {
-        question: 'Gestite casi fuori da Rimini?',
-        answer:
-          'Sì, rappresentiamo clienti in tutta la regione Emilia-Romagna e possiamo gestire casi in altre giurisdizioni italiane quando necessario. Lavoriamo anche con clienti internazionali su questioni legali transfrontaliere.',
       },
     ],
     cta: {

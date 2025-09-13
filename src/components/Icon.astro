@@ -67,10 +67,16 @@ if (!IconComponent && !isWhatsApp) {
 }
 ---
 
-{isWhatsApp ? (
-  <span class={className} style={`display:inline-block;width:${size}px;height:${size}px;line-height:0;`} set:html={WhatsAppSvg} />
-) : IconComponent ? (
-  <IconComponent size={size} class={className} />
-) : (
-  <Scale size={size} class={className} />
-)}
+{
+  isWhatsApp ? (
+    <span
+      class={className}
+      style={`display:inline-block;width:${size}px;height:${size}px;line-height:0;`}
+      set:html={WhatsAppSvg}
+    />
+  ) : IconComponent ? (
+    <IconComponent size={size} class={className} />
+  ) : (
+    <Scale size={size} class={className} />
+  )
+}

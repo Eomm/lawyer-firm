@@ -209,29 +209,35 @@ export const en = {
     description: 'Find answers to common legal questions and learn more about our services.',
     items: [
       {
-        question: 'What areas of law do you specialize in?',
+        question: 'Do you handle cases outside Cesena and Forlì?',
+        answer: 'Yes, we assist our clients in courts throughout Italy.',
+      },
+      {
+        question: 'What areas of law do you primarily practice?',
+        answer: 'We specialize in criminal law in all its branches.',
+      },
+      {
+        question: 'What is legal aid (gratuito patrocinio) and who is eligible?',
         answer:
-          'Our firm specializes in civil, commercial, family, real estate, and intellectual property law. We have extensive experience in litigation, contract negotiation, and legal consultation in these practice areas.',
+          'Also known as state-funded legal aid, it allows individuals to be assisted by a lawyer at no cost. Eligibility depends on meeting specific income or subject-matter requirements set by law.',
+      },
+      {
+        question: 'What is court-appointed defense?',
+        answer: 'It is the appointment of a lawyer by the State when the defendant does not have a lawyer of choice.',
+      },
+      {
+        question: 'Does a court-appointed lawyer have to be paid?',
+        answer:
+          'Yes, a court-appointed lawyer is entitled to compensation just like a lawyer of choice, unless the client qualifies for legal aid.',
+      },
+      {
+        question: 'How can I book an appointment?',
+        answer: 'You can contact us by phone, email, or chat. You can find all our contact details on the website.',
       },
       {
         question: 'How much do your services cost?',
         answer:
-          'Our fees vary depending on the complexity and nature of your case. We offer transparent pricing and will provide a detailed quote after our initial consultation. We also offer flexible payment arrangements when appropriate.',
-      },
-      {
-        question: 'Do you offer free consultations?',
-        answer:
-          'We offer a 30-minute initial consultation to discuss your legal needs and determine how we can best assist you. This allows us to understand your situation and provide preliminary guidance.',
-      },
-      {
-        question: 'How long does a case typically take?',
-        answer:
-          'The duration of a case depends on its complexity and the specific legal issues involved. Simple matters can be resolved in a few weeks, while complex litigation may take several months or years. We will provide realistic timelines during our consultation.',
-      },
-      {
-        question: 'Do you handle cases outside of Rimini?',
-        answer:
-          'Yes, we represent clients throughout the Emilia-Romagna region and can handle cases in other Italian jurisdictions when necessary. We also work with international clients on cross-border legal matters.',
+          'Our fees vary based on the complexity and nature of your case. We offer transparent pricing and will provide a detailed quote after the initial consultation. Flexible payment arrangements are available when appropriate.',
       },
     ],
     cta: {

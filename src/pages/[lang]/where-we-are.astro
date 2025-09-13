@@ -42,41 +42,44 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
           <!-- Location Info -->
           <div>
             <!-- Locations -->
-            <div class="max-w-2xl mx-auto text-left">
-              {
-                t.whereWeAre.locations.map(office => (
-                  <div class="mb-8">
-                    <div class="flex items-start mb-4">
-                      <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <Icon name="MapPin" class="w-6 h-6 text-gold" size={24} />
+            <div class="text-left">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {
+                  t.whereWeAre.locations.map(office => (
+                    <div class="mb-8">
+                      <div class="flex items-start mb-4">
+                        <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                          <Icon name="MapPin" class="w-6 h-6 text-gold" size={24} />
+                        </div>
+                        <div>
+                          <h3 class="text-lg font-semibold text-navy mb-2">{office.subtitle}</h3>
+                          <a
+                            href={office.googleMapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-gray-700 text-lg underline hover:text-gold transition-colors duration-200"
+                          >
+                            {office.address}
+                          </a>
+                        </div>
                       </div>
-                      <div>
-                        <h3 class="text-lg font-semibold text-navy mb-2">{office.subtitle}</h3>
-                        <a
-                          href={office.googleMapsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class="text-gray-700 text-lg underline hover:text-gold transition-colors duration-200"
-                        >
-                          {office.address}
-                        </a>
-                      </div>
+                      <p class="text-gray-600 leading-relaxed ml-16">{office.description}</p>
+                      {office.buildingPhoto && (
+                        <div class="ml-16 mt-4">
+                          <Image
+                            src={sedeCesenaImage}
+                            alt={office.subtitle}
+                            class="rounded-lg shadow-md w-full max-w-md"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
                     </div>
-                    <p class="text-gray-600 leading-relaxed ml-16">{office.description}</p>
-                    {office.buildingPhoto && (
-                      <div class="ml-16 mt-4">
-                        <Image
-                          src={sedeCesenaImage}
-                          alt={office.subtitle}
-                          class="rounded-lg shadow-md w-full max-w-md"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))
-              }
-              <div class="flex items-start mb-4">
+                  ))
+                }
+              </div>
+
+              <div class="flex items-start mt-8 mb-4">
                 <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                   <Icon name="Clock" class="w-6 h-6 text-gold" size={24} />
                 </div>
@@ -104,17 +107,17 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
+            href={`${baseUrl}${lang}/contact`}
+            class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
+          >
+            {t.common.bookConsultation}
+          </a>
+          <a
             href={`tel:${t.home.cta.phone}`}
             class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
           >
             <Icon name="Phone" class="w-4 h-4 mr-2" size={16} />
             {t.whereWeAre.contact.callNow}
-          </a>
-          <a
-            href={`${baseUrl}${lang}/contact`}
-            class="inline-flex items-center justify-center px-4 py-2 border-2 border-navy text-navy rounded-lg font-semibold hover:bg-navy hover:text-white transition-colors duration-200"
-          >
-            {t.common.bookConsultation}
           </a>
         </div>
       </div>
