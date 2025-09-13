@@ -69,13 +69,28 @@ const currentPath = `${baseUrl}${lang}/contact`;
                 </p>
               </div>
 
-              <a
-                href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
-                class="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
-              >
-                <Icon name="Mail" class="w-5 h-5 mr-3" size={20} />
-                {t.contact.info.submit}
-              </a>
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
+                  class="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
+                >
+                  <Icon name="Mail" class="w-5 h-5 mr-3" size={20} />
+                  {t.contact.info.submit}
+                </a>
+                <span class="text-gray-600">oppure</span>
+                <a
+                  href={`https://wa.me/${t.home.cta.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-[#25D366] focus:ring-opacity-50"
+                  style="background-color: #075E54; color: #fff; border: 1px solid #075E54;"
+                  onmouseover="this.style.backgroundColor='#25D366';"
+                  onmouseout="this.style.backgroundColor='#075E54';"
+                >
+                  <Icon name="WhatsApp" class="w-5 h-5 mr-3" size={20} />
+                  {t.contact.info.submitWA}
+                </a>
+              </div>
             </div>
           </div>
 
@@ -110,15 +125,35 @@ const currentPath = `${baseUrl}${lang}/contact`;
                 }
 
                 <!-- Phone -->
-                <div class="flex items-start">
-                  <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                    <Icon name="Phone" class="w-6 h-6 text-gold" size={24} />
+                <div class="flex items-start gap-8">
+                  {/* First Phone Section */}
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon name="Phone" class="w-6 h-6 text-gold" size={24} />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-navy mb-1">{t.common.phone}</h4>
+                      <a href={`tel:${t.home.cta.phone}`} class="hover:text-gold transition-colors duration-200">
+                        {t.home.cta.phone}
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h4 class="font-semibold text-navy mb-1">{t.common.phone}</h4>
-                    <a href={`tel:${t.home.cta.phone}`} class="hover:text-gold transition-colors duration-200">
-                      {t.home.cta.phone}
-                    </a>
+                  {/* Second Phone Section */}
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon name="WhatsApp" class="w-6 h-6 text-gold" size={24} />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-navy mb-1">{t.common.chat}</h4>
+                      <a
+                        href={`https://wa.me/${t.home.cta.whatsapp}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-gold transition-colors duration-200"
+                      >
+                        {t.home.cta.whatsapp}
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -129,7 +164,10 @@ const currentPath = `${baseUrl}${lang}/contact`;
                   </div>
                   <div>
                     <h4 class="font-semibold text-navy mb-1">{t.common.email}</h4>
-                    <a href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`} class="hover:text-gold transition-colors duration-200">
+                    <a
+                      href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
+                      class="hover:text-gold transition-colors duration-200"
+                    >
                       {t.footer.email}
                     </a>
                   </div>

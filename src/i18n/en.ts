@@ -13,6 +13,7 @@ export const en = {
     readMore: 'Read More',
     bookConsultation: 'Book a Consultation',
     phone: 'Phone',
+    chat: 'Chat',
     email: 'Email',
     officeHours: 'Office Hours',
   },
@@ -89,6 +90,7 @@ export const en = {
       title: 'Do you need legal assistance?',
       description: 'Contact us today for a consultation with our expert legal team.',
       phone: '+39 0547 29 180',
+      whatsapp: '+393514101074',
     },
   },
 
@@ -251,6 +253,7 @@ export const en = {
       instructions: ['Full Name', 'Phone Number', 'Brief description of what happened'],
       notes: 'You will be contacted as soon as possible by our team. Note that our team will speak Italian.',
       submit: 'Send Message',
+      submitWA: 'Contact via WhatsApp',
     },
   },
 

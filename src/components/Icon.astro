@@ -23,6 +23,7 @@ import {
   ArrowLeft,
   ArrowRight,
 } from 'lucide-astro';
+import WhatsAppSvg from '@/assets/wapp.svg?raw';
 
 export interface Props {
   name: string;
@@ -59,10 +60,17 @@ const iconMap: Record<string, typeof Scale> = {
 };
 
 const IconComponent = iconMap[name];
+const isWhatsApp = typeof name === 'string' && name.toLowerCase() === 'whatsapp';
 
-if (!IconComponent) {
+if (!IconComponent && !isWhatsApp) {
   console.warn(`Icon "${name}" not found. Available icons:`, Object.keys(iconMap));
 }
 ---
 
-{IconComponent ? <IconComponent size={size} class={className} /> : <Scale size={size} class={className} />}
+{isWhatsApp ? (
+  <span class={className} style={`display:inline-block;width:${size}px;height:${size}px;line-height:0;`} set:html={WhatsAppSvg} />
+) : IconComponent ? (
+  <IconComponent size={size} class={className} />
+) : (
+  <Scale size={size} class={className} />
+)}

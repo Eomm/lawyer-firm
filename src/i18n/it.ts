@@ -13,6 +13,7 @@ export const it = {
     readMore: 'Leggi di più',
     bookConsultation: 'Prenota una Consulenza',
     phone: 'Telefono',
+    chat: 'Chat',
     email: 'Email',
     officeHours: 'Orari di Apertura',
   },
@@ -90,6 +91,7 @@ export const it = {
       title: 'Hai bisogno di assistenza legale?',
       description: 'Contattaci oggi per una consulenza con il nostro team legale esperto.',
       phone: '+39 0547 29 180',
+      whatsapp: '+393514101074',
     },
   },
 
@@ -282,16 +284,17 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     description: 'Mettiti in contatto con il nostro team legale per consulenza e rappresentanza professionale.',
     info: {
       title: 'Contattaci',
-      subtitle: 'Inviaci una email per ricevere aiuto',
+      subtitle: 'Scrivici per ricevere aiuto',
       description:
-        'Per fornirti la migliore assistenza possibile fin dal primo appuntamento, includi nella tua email le seguenti informazioni:',
+        'Per fornirti la migliore assistenza possibile fin dal primo appuntamento, includi nel tuo messaggio le seguenti informazioni:',
       instructions: [
         'Nome e Cognome', //
         'Numero di Telefono',
         'Breve descrizione di cosa è accaduto',
       ],
       notes: 'Verrai ricontattato al più presto dal nostro team.',
-      submit: 'Invia Messaggio',
+      submit: 'Invia Email',
+      submitWA: 'Scrivici in Chat',
     },
   },
 
@@ -333,7 +336,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
     termsOfService: 'Termini di Servizio',
     officeHours: 'Orari di apertura',
     officeHoursDescription:
-      'Riceviamo dal lunedì al venerdì solo su appuntamento. Siamo reperibili nel fine settimana solo per emergenze.',
+      'Riceviamo dal lunedì al venerdì solo su appuntamento. Per emergenze siamo disponibili anche nel fine settimana.',
     vatLabel: 'P.IVA',
   },
 };
