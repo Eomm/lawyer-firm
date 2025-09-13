@@ -10,9 +10,6 @@ import sedeCesenaImage from '/public/images/sede-cesena.png';
 
 export { getStaticPaths };
 
-// const imageMap = {
-//   'sedeCesenaImage': sedeCesenaImage,
-// }
 const baseUrl = import.meta.env.BASE_URL || '';
 const { lang } = Astro.params as { lang: Language };
 const t = getTranslations(lang);
@@ -70,7 +67,7 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
                             src={sedeCesenaImage}
                             alt={office.subtitle}
                             class="rounded-lg shadow-md w-full max-w-md"
-                            loading="lazy"
+                            loading="eager"
                           />
                         </div>
                       )}
