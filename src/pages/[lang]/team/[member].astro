@@ -105,7 +105,7 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
                   <div class="flex items-center">
                     <Icon name="Mail" class="w-4 h-4 mr-3 text-gold flex-shrink-0" size={16} />
                     <a
-                      href=`mailto:${currentMember.email}`
+                      href=`mailto:${currentMember.email}?subject=Richiesta%20consulenza`
                       class="text-navy hover:text-gold transition-colors duration-200"
                     >
                       {currentMember.email}
@@ -179,7 +179,7 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
                 {t.team.memberDetail.scheduleConsultation.replace('{name}', currentMember.name)}
               </p>
               <a
-                href=`mailto:${currentMember.email}`
+                href=`mailto:${currentMember.email}?subject=Richiesta%20consulenza`
                 class="inline-flex items-center justify-center bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
               >
                 <Icon name="Mail" class="w-4 h-4 mr-2" size={16} />

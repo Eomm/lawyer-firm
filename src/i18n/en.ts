@@ -286,12 +286,12 @@ export const en = {
   footer: {
     description: 'Professional legal services with over 25 years of experience in criminal law.',
     quickLinks: 'Links',
-    address: 'Viale IV Novembre 145, 47522 Cesena FC',
     email: 'info@studiolegaleferrini.com',
     copyright: 'All rights reserved.',
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
     officeHours: 'Office Hours',
     officeHoursDescription: 'We receive from Monday to Friday by appointment only.',
+    vatLabel: 'VAT',
   },
 };

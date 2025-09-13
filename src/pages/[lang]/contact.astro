@@ -70,7 +70,7 @@ const currentPath = `${baseUrl}${lang}/contact`;
               </div>
 
               <a
-                href={`mailto:${t.footer.email}`}
+                href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
                 class="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
               >
                 <Icon name="Mail" class="w-5 h-5 mr-3" size={20} />
@@ -129,7 +129,7 @@ const currentPath = `${baseUrl}${lang}/contact`;
                   </div>
                   <div>
                     <h4 class="font-semibold text-navy mb-1">{t.common.email}</h4>
-                    <a href={`mailto:${t.footer.email}`} class="hover:text-gold transition-colors duration-200">
+                    <a href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`} class="hover:text-gold transition-colors duration-200">
                       {t.footer.email}
                     </a>
                   </div>

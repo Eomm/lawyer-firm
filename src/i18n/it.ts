@@ -327,12 +327,13 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
   footer: {
     description: 'Servizi legali professionali con oltre 25 anni di esperienza nel diritto penale.',
     quickLinks: 'Link',
-    address: 'Viale IV Novembre 145, 47522 Cesena FC',
     email: 'info@studiolegaleferrini.com',
     copyright: 'Tutti i diritti riservati.',
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Termini di Servizio',
     officeHours: 'Orari di apertura',
-    officeHoursDescription: 'Riceviamo dal lunedì al venerdì solo su appuntamento.',
+    officeHoursDescription:
+      'Riceviamo dal lunedì al venerdì solo su appuntamento. Siamo reperibili nel fine settimana solo per emergenze.',
+    vatLabel: 'P.IVA',
   },
 };

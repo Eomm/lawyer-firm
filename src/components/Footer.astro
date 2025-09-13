@@ -23,17 +23,21 @@ const currentYear = new Date().getFullYear();
           {t.footer.description}
         </p>
         <div class="space-y-2 text-sm text-gray-300">
-          <div class="flex items-center">
-            <Icon name="MapPin" class="w-4 h-4 mr-2 flex-shrink-0" size={16} />
-            <a
-              href="https://maps.app.goo.gl/PwThSydmor3m82CV9"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hover:text-gold transition-colors duration-200"
-            >
-              {t.footer.address}
-            </a>
-          </div>
+          {
+            t.whereWeAre.locations.map(office => (
+              <div class="flex items-center">
+                <Icon name="MapPin" class="w-4 h-4 mr-2 flex-shrink-0" size={16} />
+                <a
+                  href={office.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-gold transition-colors duration-200"
+                >
+                  {office.address}
+                </a>
+              </div>
+            ))
+          }
           <div class="flex items-center">
             <Icon name="Phone" class="w-4 h-4 mr-2 flex-shrink-0" size={16} />
             <a href={`tel:${t.home.cta.phone}`} class="hover:text-gold transition-colors duration-200">
@@ -42,9 +46,16 @@ const currentYear = new Date().getFullYear();
           </div>
           <div class="flex items-center">
             <Icon name="Mail" class="w-4 h-4 mr-2 flex-shrink-0" size={16} />
-            <a href={`mailto:${t.footer.email}`} class="hover:text-gold transition-colors duration-200">
+            <a
+              href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
+              class="hover:text-gold transition-colors duration-200"
+            >
               {t.footer.email}
             </a>
+          </div>
+          <div class="flex items-center">
+            <Icon name="FileText" class="w-4 h-4 mr-2 flex-shrink-0" size={16} />
+            <span>{t.footer.vatLabel}: 03815300409</span>
           </div>
         </div>
       </div>
