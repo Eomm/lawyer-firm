@@ -1,0 +1,52 @@
+{
+  "workbench.colorCustomizations": {
+    "[GitHub Dark]": {
+      "tab.activeBackground": "#0d0d0d",
+      "tab.activeBorder": "#ffff00"
+    },
+    "activityBar.background": "#F06B83",
+    "activityBar.foreground": "#6F1726",
+    "activityBar.inactiveForeground": "#473f40",
+    "activityBar.activeBorder": "#0f947c",
+    "activityBar.activeBackground": "#B0344B",
+    "activityBar.border": "#B0344B",
+    "titleBar.activeBackground": "#EA4865",
+    "titleBar.activeForeground": "#6F1726",
+    "titleBar.inactiveBackground": "#d16175",
+    "titleBar.inactiveForeground": "#473f40",
+    "titleBar.border": "#B0344B",
+    "statusBar.background": "#DA3552",
+    "statusBar.foreground": "#6F1726",
+    "statusBar.border": "#B0344B"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.astro": "astro"
+  },
+  "emmet.includeLanguages": {
+    "astro": "html"
+  }
+}

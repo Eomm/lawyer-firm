@@ -1,0 +1,26 @@
+/* Header component styles */
+
+/* Custom breakpoint at 840px for navigation */
+.desktop-nav,
+.desktop-nav-actions {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: block;
+}
+
+@media (min-width: 840px) {
+  .desktop-nav,
+  .desktop-nav-actions {
+    display: block;
+  }
+
+  .desktop-nav-actions {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+}

@@ -1,0 +1,82 @@
+---
+import {
+  Scale,
+  Briefcase,
+  Heart,
+  Building2,
+  Users,
+  Shield,
+  FileText,
+  Gavel,
+  Home,
+  Handshake,
+  HeartHandshake,
+  CarTaxiFront,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
+  Car,
+  Bus,
+  Train,
+  Clock,
+  ArrowLeft,
+  ArrowRight,
+} from 'lucide-astro';
+import WhatsAppSvg from '@/assets/wapp.svg?raw';
+
+export interface Props {
+  name: string;
+  class?: string;
+  size?: number;
+}
+
+const { name, class: className = '', size = 24 } = Astro.props;
+
+// Icon mapping
+const iconMap: Record<string, typeof Scale> = {
+  Scale,
+  Briefcase,
+  Heart,
+  Building2,
+  Users,
+  Shield,
+  FileText,
+  Gavel,
+  Home,
+  Handshake,
+  HeartHandshake,
+  CarTaxiFront,
+  CircleCheckBig,
+  MapPin,
+  Phone,
+  Mail,
+  Car,
+  Bus,
+  Train,
+  Clock,
+  ArrowLeft,
+  ArrowRight,
+};
+
+const IconComponent = iconMap[name];
+const isWhatsApp = typeof name === 'string' && name.toLowerCase() === 'whatsapp';
+
+if (!IconComponent && !isWhatsApp) {
+  console.warn(`Icon "${name}" not found. Available icons:`, Object.keys(iconMap));
+}
+---
+
+{
+  isWhatsApp ? (
+    <span
+      class={className}
+      style={`display:inline-block;width:${size}px;height:${size}px;line-height:0;`}
+      set:html={WhatsAppSvg}
+    />
+  ) : IconComponent ? (
+    <IconComponent size={size} class={className} />
+  ) : (
+    <Scale size={size} class={className} />
+  )
+}

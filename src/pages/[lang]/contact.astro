@@ -1,0 +1,197 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Icon from '@/components/Icon.astro';
+import { getTranslations, getStaticPaths, type Language } from '@/i18n';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/contact`;
+---
+
+<Layout title={t.contact.title} description={t.contact.seo} lang={lang} currentPath={currentPath}>
+  <Header lang={lang} currentPath={currentPath} />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-10 bg-gradient-to-br from-navy to-navy-light text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {t.contact.title}
+        </h1>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+          {t.contact.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div>
+            <div class="bg-gradient-to-br from-navy-light/10 to-gold/10 rounded-xl p-8 border border-navy/10">
+              <h2 class="text-3xl font-bold text-navy mb-8">{t.contact.info.title}</h2>
+              <div class="flex items-start mb-2">
+                <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                  <Icon name="Mail" class="w-6 h-6 text-gold" size={24} />
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-navy mb-2">
+                    {t.contact.info.subtitle}
+                  </h3>
+                  <p class="text-gray-700 mb-2">
+                    {t.contact.info.description}
+                  </p>
+                </div>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                {
+                  t.contact.info.instructions.map(instruction => (
+                    <div class="flex items-center">
+                      <div class="w-2 h-2 bg-navy rounded-full mr-3" />
+                      <span class="text-gray-700 font-medium">{instruction}</span>
+                    </div>
+                  ))
+                }
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <p class="text-gray-600">
+                  {t.contact.info.notes}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
+                  class="inline-flex items-center bg-navy text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
+                >
+                  <Icon name="Mail" class="w-5 h-5 mr-3" size={20} />
+                  {t.contact.info.submit}
+                </a>
+                <span class="text-gray-600">oppure</span>
+                <a
+                  href={`https://wa.me/${t.home.cta.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-[#25D366] focus:ring-opacity-50"
+                  style="background-color: #075E54; color: #fff; border: 1px solid #075E54;"
+                  onmouseover="this.style.backgroundColor='#25D366';"
+                  onmouseout="this.style.backgroundColor='#075E54';"
+                >
+                  <Icon name="WhatsApp" class="w-5 h-5 mr-3" size={20} />
+                  {t.contact.info.submitWA}
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div>
+            <div class="bg-gray-50 rounded-xl p-8 h-full border border-navy/10">
+              <h3 class="text-2xl font-bold text-navy mb-8">
+                {lang === 'en' ? 'Contact Information' : 'Informazioni di Contatto'}
+              </h3>
+
+              <div class="space-y-6">
+                <!-- Address -->
+                {
+                  t.whereWeAre.locations.map(office => (
+                    <div class="flex items-start">
+                      <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon name="MapPin" class="w-6 h-6 text-gold" size={24} />
+                      </div>
+                      <div>
+                        <h4 class="font-semibold text-navy mb-1">{office.subtitle}</h4>
+                        <a
+                          href={office.googleMapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-gray-700 text-lg underline hover:text-gold transition-colors duration-200"
+                        >
+                          {office.address}
+                        </a>
+                      </div>
+                    </div>
+                  ))
+                }
+
+                <!-- Phone -->
+                <div class="flex items-start gap-8">
+                  {/* First Phone Section */}
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon name="Phone" class="w-6 h-6 text-gold" size={24} />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-navy mb-1">{t.common.phone}</h4>
+                      <a href={`tel:${t.home.cta.phone}`} class="hover:text-gold transition-colors duration-200">
+                        {t.home.cta.phone}
+                      </a>
+                    </div>
+                  </div>
+                  {/* Second Phone Section */}
+                  <div class="flex items-start">
+                    <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <Icon name="WhatsApp" class="w-6 h-6 text-gold" size={24} />
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-navy mb-1">{t.common.chat}</h4>
+                      <a
+                        href={`https://wa.me/${t.home.cta.whatsapp}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-gold transition-colors duration-200"
+                      >
+                        {t.home.cta.whatsapp}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon name="Mail" class="w-6 h-6 text-gold" size={24} />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-navy mb-1">{t.common.email}</h4>
+                    <a
+                      href={`mailto:${t.footer.email}?subject=Richiesta%20consulenza`}
+                      class="hover:text-gold transition-colors duration-200"
+                    >
+                      {t.footer.email}
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Office Hours -->
+                <div class="flex items-start">
+                  <div class="w-12 h-12 bg-navy rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon name="Clock" class="w-6 h-6 text-gold" size={24} />
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-navy mb-1">{t.footer.officeHours}</h4>
+                    <div class="text-gray-600">
+                      {t.footer.officeHoursDescription}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

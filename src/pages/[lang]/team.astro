@@ -1,0 +1,112 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { Image } from 'astro:assets';
+import Icon from '@/components/Icon.astro';
+import { getTranslations, getStaticPaths, type Language } from '@/i18n';
+
+// Import team member images
+import ferriniImage from '/public/images/ferrini-front.png';
+import giordanaImage from '/public/images/giordana-front.png';
+import maraldiImage from '/public/images/maraldi-front.png';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/team`;
+
+const teamMembers = [
+  {
+    id: 'luca-ferrini',
+    ...t.team.members['luca-ferrini'],
+    image: ferriniImage,
+  },
+  {
+    id: 'giordana-pasini',
+    ...t.team.members['giordana-pasini'],
+    image: giordanaImage,
+  },
+  {
+    id: 'vanessa-maraldi',
+    ...t.team.members['vanessa-maraldi'],
+    image: maraldiImage,
+  },
+];
+---
+
+<Layout title={t.team.title} description={t.team.seo} lang={lang} currentPath={currentPath}>
+  <Header lang={lang} currentPath={currentPath} />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-10 bg-gradient-to-br from-navy to-navy-light text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {t.team.title}
+        </h1>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+          {t.team.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Members -->
+    <section class="py-10 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {
+            teamMembers.map(member => (
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="aspect-w-1 aspect-h-1 bg-gray-200">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-80 object-cover"
+                    loading="lazy"
+                    width={400}
+                    height={320}
+                  />
+                </div>
+                <div class="p-8">
+                  <h3 class="text-2xl font-bold text-navy mb-2">{member.name}</h3>
+                  <p class="text-gold font-semibold mb-4">{member.title}</p>
+                  <p class="text-gray-600 leading-relaxed mb-6">{member.bio}</p>
+                  <a
+                    href={`${baseUrl}${lang}/team/${member.id}`}
+                    class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
+                  >
+                    {t.common.readMore}
+                    <Icon name="ArrowRight" class="w-4 h-4 ml-2" size={16} />
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-10 bg-navy text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          {t.team.memberDetail.needLegalAssistance}
+        </h2>
+        <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+          {t.team.memberDetail.teamReadyToHelp}
+        </p>
+        <a
+          href={`${baseUrl}${lang}/contact`}
+          class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+        >
+          {t.common.bookConsultation}
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>

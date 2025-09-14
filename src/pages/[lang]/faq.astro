@@ -1,0 +1,125 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { getTranslations, getStaticPaths, type Language } from '@/i18n';
+
+export { getStaticPaths };
+
+const { lang } = Astro.params as { lang: Language };
+const t = getTranslations(lang);
+
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}${lang}/faq`;
+---
+
+<Layout title={t.faq.title} description={t.faq.seo} lang={lang} currentPath={currentPath}>
+  <Header lang={lang} currentPath={currentPath} />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-10 bg-gradient-to-br from-navy to-navy-light text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          {t.faq.title}
+        </h1>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+          {t.faq.description}
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-6">
+          {
+            t.faq.items.map((item, index) => (
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <button
+                  class="faq-toggle w-full px-8 py-6 text-left bg-white hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200"
+                  aria-expanded="false"
+                  aria-controls={`faq-content-${index}`}
+                >
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-navy pr-4">{item.question}</h3>
+                    <svg
+                      class="faq-icon w-6 h-6 text-gold transform transition-transform duration-200"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <div id={`faq-content-${index}`} class="faq-content hidden px-8 pb-6">
+                  <div class="border-t border-gray-200 pt-6">
+                    <p class="text-gray-700 leading-relaxed">{item.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-10 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">
+          {t.faq.cta.title}
+        </h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          {t.faq.cta.description}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={`${baseUrl}${lang}/contact`}
+            class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
+          >
+            {t.common.bookConsultation}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<script>
+  // FAQ Toggle Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', function (this: HTMLButtonElement) {
+        const content = this.parentElement?.querySelector('.faq-content');
+        const icon = this.querySelector('.faq-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        // Close all other FAQs
+        faqToggles.forEach(otherToggle => {
+          if (otherToggle !== this) {
+            const otherContent = otherToggle.parentElement?.querySelector('.faq-content');
+            const otherIcon = otherToggle.querySelector('.faq-icon');
+
+            otherToggle.setAttribute('aria-expanded', 'false');
+            otherContent?.classList.add('hidden');
+            otherIcon?.classList.remove('rotate-180');
+          }
+        });
+
+        // Toggle current FAQ
+        this.setAttribute('aria-expanded', (!isExpanded).toString());
+        content?.classList.toggle('hidden');
+        icon?.classList.toggle('rotate-180');
+      });
+    });
+  });
+</script>
