@@ -7,8 +7,9 @@ const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
 const site = isGitHubActions
   ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
-  : 'https://studiolegaleferrini.com';
-const base = isGitHubActions ? `/${repoName}/` : undefined;
+  : 'https://studiolegaleferrini.it';
+// const base = isGitHubActions ? `/${repoName}/` : undefined;
+const base = undefined;
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +33,7 @@ export default defineConfig({
   },
 
   image: {
-    domains: ['studiolegaleferrini.com', 'github.io'],
+    domains: ['studiolegaleferrini.it', 'github.io'],
     formats: ['webp', 'avif'],
   },
 

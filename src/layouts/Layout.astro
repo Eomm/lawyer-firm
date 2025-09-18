@@ -11,7 +11,7 @@ export interface Props {
 
 const { title, description, lang, currentPath = '' } = Astro.props;
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://studiolegaleferrini.com/';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://studiolegaleferrini.it/';
 const fullUrl = `${siteUrl}${currentPath}`;
 const t = getTranslations(lang);
 

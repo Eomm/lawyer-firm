@@ -159,7 +159,7 @@ The site is configured for deployment to any static hosting service:
 
 - Build command: `npm run build`
 - Output directory: `dist/`
-- Domain: `https://studiolegaleferrini.com/`
+- Domain: `https://studiolegaleferrini.it/`
 
 ### Recommended Hosts
 
