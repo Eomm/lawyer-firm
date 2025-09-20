@@ -26,8 +26,8 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://studiolegaleferrini./sitemap-index.xml
-Sitemap: https://studiolegaleferrini./sitemap-0.xml
+Sitemap: https://studiolegaleferrini.it/sitemap-index.xml
+Sitemap: https://studiolegaleferrini.it/sitemap-0.xml
 
 # Host directive (preferred domain)
-Host: https://studiolegaleferrini.
+Host: https://studiolegaleferrini.it
