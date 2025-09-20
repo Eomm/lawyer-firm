@@ -4,12 +4,12 @@ import tailwindcss from '@tailwindcss/vite';
 
 // Check if we're in GitHub Actions environment for site URL
 const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
-const site = isGitHubActions
-  ? `https://${process.env.GITHUB_REPOSITORY_OWNER}.github.io/${repoName}`
-  : 'https://studiolegaleferrini.it';
+// const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
 // const base = isGitHubActions ? `/${repoName}/` : undefined;
 const base = undefined;
+const site = isGitHubActions //
+  ? 'https://studiolegaleferrini.it'
+  : 'http://localhost:4321';
 
 // https://astro.build/config
 export default defineConfig({
