@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { type Language } from '../i18n';
+
+// Default language for 404 is Italian; users can switch or use EN button below
+const lang: Language = 'it';
+const baseUrl = import.meta.env.BASE_URL || '';
+const currentPath = `${baseUrl}404`;
+const title = '404 - Pagina non trovata';
+const description = 'La pagina richiesta non è stata trovata.';
+---
+
+<Layout title={title} description={description} lang={lang} currentPath={currentPath} robots="noindex, nofollow">
+  <Header lang={lang} currentPath={currentPath} />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-10 bg-gradient-to-br from-navy to-navy-light text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-extrabold mb-4">404</h1>
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+          <span class="block font-semibold">Pagina non trovata</span>
+          <span class="opacity-80"
+            >Recentemente abbiamo aggiornato il sito e la pagina richiesta potrebbe essere stata rimossa.</span
+          >
+        </p>
+        <p class="mt-4 text-gray-300 text-sm">URL: <code id="missing-path">/404</code></p>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href={`${baseUrl}it`}
+            class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+          >
+            Visita il nostro nuovo sito!
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang={lang} />
+</Layout>
+
+<script>
+  // Show the missing path to help users and debugging
+  document.addEventListener('DOMContentLoaded', function () {
+    const el = document.getElementById('missing-path');
+    if (el) {
+      el.textContent = window.location.pathname + window.location.search;
+    }
+  });
+</script>

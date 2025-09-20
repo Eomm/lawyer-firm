@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 // const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
 // const base = isGitHubActions ? `/${repoName}/` : undefined;
 const base = undefined;
-const site = 'https://studiolegaleferrini.com'
+const site = 'https://studiolegaleferrini.com';
 // isGitHubActions //
 //   ? 'https://studiolegaleferrini.it'
 //   ? 'https://studiolegaleferrini.it'
