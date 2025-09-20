@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "start:prod": "npm run clean && npm run build && npm run preview",
+    "clean": "rm -rf dist/",
     "build": "npm run lint && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
