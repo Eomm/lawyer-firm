@@ -44,6 +44,8 @@ jobs:
 
       - name: Build with Astro
         run: npm run build
+        env:
+          WEBSITE_BUILD: https://studiolegaleferrini.it
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

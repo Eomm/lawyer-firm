@@ -2,16 +2,12 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// Check if we're in GitHub Actions environment for site URL
-// const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-// const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
 // const base = isGitHubActions ? `/${repoName}/` : undefined;
 const base = undefined;
-const site = 'https://studiolegaleferrini.com';
-// isGitHubActions //
-//   ? 'https://studiolegaleferrini.it'
-//   ? 'https://studiolegaleferrini.it'
-//   : 'http://localhost:4321';
+const site = process.env.WEBSITE_BUILD || 'http://localhost:4321';
+
+// eslint-disable-next-line no-undef
+const siteUrl = new URL(site);
 
 // https://astro.build/config
 export default defineConfig({
@@ -35,7 +31,7 @@ export default defineConfig({
   },
 
   image: {
-    domains: ['studiolegaleferrini.com', 'github.io'],
+    domains: [siteUrl.host],
     formats: ['webp', 'avif'],
   },
 
