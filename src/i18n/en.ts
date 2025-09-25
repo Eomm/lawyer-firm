@@ -273,7 +273,7 @@ export const en = {
       {
         subtitle: 'Cesena Office',
         address: 'Viale IV Novembre 145, 47522 Cesena FC',
-        googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
+        googleMapsUrl: 'https://maps.app.goo.gl/cXAXTVNNCodAjGbf8',
         description: 'The office is located on the 4th floor, with direct access from the convenient parking below.',
         buildingPhoto: 'sedeCesenaImage',
       },
