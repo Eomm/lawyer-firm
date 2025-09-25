@@ -314,7 +314,7 @@ d'ufficio e nell'Elenco degli avvocati abilitati al patrocinio a spese dello Sta
       {
         subtitle: 'Sede di Cesena',
         address: 'Viale IV Novembre 145, 47522 Cesena FC',
-        googleMapsUrl: 'https://maps.app.goo.gl/PwThSydmor3m82CV9',
+        googleMapsUrl: 'https://maps.app.goo.gl/cXAXTVNNCodAjGbf8',
         description: 'La sede si trova al 4° piano, con accesso diretto dal comodo parcheggio sottostante.',
         buildingPhoto: 'sedeCesenaImage',
       },
