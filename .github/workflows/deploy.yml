@@ -84,7 +84,7 @@ jobs:
     needs: build
     steps:
       - name: Download FTP artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: dist-ftp-argo
           path: ./dist-ftp
@@ -95,5 +95,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist-ftp
-          server-dir: ./www
+          local-dir: ./dist-ftp/
+          server-dir: ./www/
+          timeout: 60000
