@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    ignore:
+      # Ignore package-lock.json updates by ignoring all npm lockfile updates
+      - dependency-name: "*"
+        dependency-type: "all"
+        update-types: ["version-update:lockfile-only"]
+    open-pull-requests-limit: 10
+    reviewers:
+      - "Eomm"
+    assignees:
+      - "Eomm"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
