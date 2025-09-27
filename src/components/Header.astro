@@ -20,7 +20,11 @@ const navItems = [
 ];
 
 const otherLang = lang === 'en' ? 'it' : 'en';
-const langSwitchPath = currentPath.replace(`${baseUrl}${lang}`, `${baseUrl}${otherLang}`) || `${baseUrl}${otherLang}`;
+const langSwitchPath =
+  (currentPath === '/'
+    ? `${baseUrl}${otherLang}`
+    : currentPath.replace(`${baseUrl}${lang}`, `${baseUrl}${otherLang}`)) || //
+  `${baseUrl}${otherLang}`;
 ---
 
 <header class="bg-white shadow-lg sticky top-0 z-50">
