@@ -7,11 +7,12 @@ export interface Props {
   description: string;
   lang: Language;
   currentPath?: string;
+  robots?: string;
 }
 
-const { title, description, lang, currentPath = '' } = Astro.props;
+const { title, description, lang, currentPath = '', robots = 'index, follow' } = Astro.props;
 
-const siteUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://studiolegaleferrini.it/';
+const siteUrl = Astro.site?.toString().replace(/\/$/, '');
 const fullUrl = `${siteUrl}${currentPath}`;
 const t = getTranslations(lang);
 
@@ -55,7 +56,7 @@ const structuredData = {
     <!-- SEO Meta Tags -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={fullUrl} />
 
     <!-- Hreflang Tags -->
