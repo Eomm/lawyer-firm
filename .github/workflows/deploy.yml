@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   # Runs on pushes targeting the main and wip branches
   push:
-    branches: ['main', 'wip']
+    branches: ['main', 'dot-com']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -52,6 +52,18 @@ jobs:
         with:
           path: ./dist
 
+      - name: Build for FTP (ARGO)
+        run: npm run build
+        env:
+          WEBSITE_BUILD: https://studiolegaleferrini.com
+
+      - name: Upload FTP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-ftp-argo
+          path: ./dist
+
+  # Deploy the first build to GitHub Pages
   deploy:
     environment:
       name: github-pages
@@ -62,3 +74,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Deploy the second build to FTP
+  deploy-ftp:
+    environment:
+      name: ftp-host
+      url: https://studiolegaleferrini.com
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download FTP artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-ftp-argo
+          path: ./dist-ftp
+
+      - name: FTP deploy to /argo
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist-ftp
+          server-dir: ./www
