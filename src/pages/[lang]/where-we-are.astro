@@ -55,6 +55,7 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
                             target="_blank"
                             rel="noopener noreferrer"
                             class="text-gray-700 text-lg underline hover:text-gold transition-colors duration-200"
+                            title={office.address}
                           >
                             {office.address}
                           </a>
@@ -106,12 +107,14 @@ const currentPath = `${baseUrl}${lang}/where-we-are`;
           <a
             href={`${baseUrl}${lang}/contact`}
             class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
+            title={t.common.bookConsultation}
           >
             {t.common.bookConsultation}
           </a>
           <a
             href={`tel:${t.home.cta.phone}`}
             class="inline-flex items-center justify-center px-4 py-2 bg-navy text-white px-8 py-4 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200"
+            title={t.whereWeAre.contact.callNow}
           >
             <Icon name="Phone" class="w-4 h-4 mr-2" size={16} />
             {t.whereWeAre.contact.callNow}

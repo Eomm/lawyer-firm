@@ -32,7 +32,7 @@ const langSwitchPath =
     <div class="flex justify-between items-center h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href={`${baseUrl}${lang}`} class="flex items-center space-x-3">
+        <a href={`${baseUrl}${lang}`} class="flex items-center space-x-3" title={t.nav.home}>
           <span class="text-6xl text-gold font-mono" aria-label="Studio Legale Ferrini Logo">Φ</span>
           <span class="text-xl font-bold text-navy">Studio Legale Ferrini</span>
         </a>
@@ -45,6 +45,7 @@ const langSwitchPath =
             navItems.map(item => (
               <a
                 href={item.href}
+                title={item.label}
                 class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   currentPath === item.href ? 'bg-navy text-white' : 'text-navy hover:bg-navy hover:text-white'
                 }`}
@@ -62,6 +63,7 @@ const langSwitchPath =
         <a
           href={langSwitchPath}
           class="text-sm text-navy hover:text-gold transition-colors duration-200"
+          title={`Switch to ${otherLang.toUpperCase()}`}
           aria-label={`Switch to ${otherLang.toUpperCase()}`}
         >
           {otherLang.toUpperCase()}
@@ -69,6 +71,7 @@ const langSwitchPath =
         <a
           href={`${baseUrl}${lang}/contact`}
           class="bg-gold text-navy px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors duration-200"
+          title={t.common.bookConsultation}
         >
           {t.common.bookConsultation}
         </a>
@@ -116,6 +119,7 @@ const langSwitchPath =
           navItems.map(item => (
             <a
               href={item.href}
+              title={item.label}
               class={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                 currentPath === item.href ? 'bg-navy text-white' : 'text-navy hover:bg-navy hover:text-white'
               }`}
@@ -129,6 +133,7 @@ const langSwitchPath =
           <a
             href={langSwitchPath}
             class="text-sm text-navy hover:text-gold transition-colors duration-200"
+            title={`Switch to ${otherLang.toUpperCase()}`}
             aria-label={`Switch to ${otherLang.toUpperCase()}`}
           >
             {otherLang.toUpperCase()}
@@ -136,6 +141,7 @@ const langSwitchPath =
           <a
             href={`${baseUrl}${lang}/contact`}
             class="bg-gold text-navy px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-colors duration-200"
+            title={t.common.bookConsultation}
           >
             {t.common.bookConsultation}
           </a>

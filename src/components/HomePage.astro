@@ -52,6 +52,7 @@ const headerPath = canonicalPath || `${baseUrl}${lang}`;
           <a
             href={`${baseUrl}${lang}/contact`}
             class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+            title={t.home.hero.cta}
           >
             {t.home.hero.cta}
           </a>
@@ -135,6 +136,7 @@ const headerPath = canonicalPath || `${baseUrl}${lang}`;
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center justify-center border-2 border-gold text-gold px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold hover:text-navy transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+            title={t.contact.info.submitWA}
           >
             <Icon name="WhatsApp" class="w-4 h-4 mr-4 -mt-2" size={16} />
             {t.contact.info.submitWA}
@@ -142,12 +144,14 @@ const headerPath = canonicalPath || `${baseUrl}${lang}`;
           <a
             href={`${baseUrl}${lang}/contact`}
             class="inline-block items-center bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+            title={t.common.bookConsultation}
           >
             {t.common.bookConsultation}
           </a>
           <a
             href={`tel:${t.home.cta.phone}`}
             class="inline-flex items-center justify-center border-2 border-gold text-gold px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gold hover:text-navy transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+            title={t.whereWeAre.contact.callNow}
           >
             <Icon name="Phone" class="w-4 h-4 mr-2" size={16} />
             {t.whereWeAre.contact.callNow}

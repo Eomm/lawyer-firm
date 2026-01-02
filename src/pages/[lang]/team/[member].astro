@@ -58,13 +58,21 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ol class="flex items-center space-x-2 text-sm">
           <li>
-            <a href={`/${lang}`} class="text-navy hover:text-gold transition-colors duration-200">
+            <a
+              href={`/${lang}`}
+              class="text-navy hover:text-gold transition-colors duration-200"
+              title={t.nav.home}
+            >
               {t.nav.home}
             </a>
           </li>
           <li class="text-gray-400">/</li>
           <li>
-            <a href={`${baseUrl}${lang}/team`} class="text-navy hover:text-gold transition-colors duration-200">
+            <a
+              href={`${baseUrl}${lang}/team`}
+              class="text-navy hover:text-gold transition-colors duration-200"
+              title={t.nav.team}
+            >
               {t.nav.team}
             </a>
           </li>
@@ -107,6 +115,7 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
                     <a
                       href=`mailto:${currentMember.email}?subject=Richiesta%20consulenza`
                       class="text-navy hover:text-gold transition-colors duration-200"
+                      title={currentMember.email}
                     >
                       {currentMember.email}
                     </a>
@@ -181,6 +190,7 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
               <a
                 href=`mailto:${currentMember.email}?subject=Richiesta%20consulenza`
                 class="inline-flex items-center justify-center bg-navy text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-light transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-navy focus:ring-opacity-50"
+                title={t.common.bookConsultation}
               >
                 <Icon name="Mail" class="w-4 h-4 mr-2" size={16} />
                 {t.common.bookConsultation}
@@ -197,6 +207,7 @@ const pageTitle = `${currentMember.name} - ${t.team.title}`;
         <a
           href={`${baseUrl}${lang}/team`}
           class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
+          title={t.team.memberDetail.backToTeam}
         >
           <Icon name="ArrowLeft" class="w-4 h-4 mr-2" size={16} />
           {t.team.memberDetail.backToTeam}

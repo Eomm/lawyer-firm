@@ -63,6 +63,7 @@ const teamMembers = [
                 <a
                   href={`${baseUrl}${lang}/team/${member.id}`}
                   class="block aspect-w-1 aspect-h-1 bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50 group"
+                  title={`${t.common.readMore} - ${member.name}`}
                   aria-label={`${t.common.readMore} - ${member.name}`}
                 >
                   <Image
@@ -82,6 +83,7 @@ const teamMembers = [
                   <a
                     href={`${baseUrl}${lang}/team/${member.id}`}
                     class="inline-flex items-center text-navy hover:text-gold transition-colors duration-200 font-semibold"
+                    title={`${t.common.readMore} - ${member.name}`}
                   >
                     {t.common.readMore}
                     <Icon name="ArrowRight" class="w-4 h-4 ml-2" size={16} />
@@ -106,6 +108,7 @@ const teamMembers = [
         <a
           href={`${baseUrl}${lang}/contact`}
           class="inline-block bg-gold text-navy px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-50"
+          title={t.common.bookConsultation}
         >
           {t.common.bookConsultation}
         </a>
