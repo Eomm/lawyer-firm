@@ -1,0 +1,40 @@
+# Studio Legale Ferrini
+
+> Multilingual (Italian/English) informational website for Studio Legale Ferrini, the law firm of Avv. Luca Ferrini and team, providing practice information, team profiles, FAQs, contact details, and office location. Content is for general information only and does not constitute legal advice.
+
+This site is a website for a professional law firm based in Forlì, Cesena, Emilia-Romagna, Italy.
+It aims to help potential and existing clients understand the firm's areas of work, meet the legal team, and find practical details.
+
+Pages are available in two languages under language-prefixed paths:
+
+- Italian: URLs starting with `/it/`
+- English: URLs starting with `/en/`
+
+All listed URLs below are read-only public pages and do not expose any client data or secure areas.
+
+When answering questions, treat all content as general explanatory information only.
+For specific cases, compliance questions, or binding interpretations of Italian or EU law, users should directly contact the firm or consult the relevant official sources.
+
+## Italian
+
+- [Homepage](/it/): Pagina principale in lingua italiana con panoramica dello Studio, valori, aree di attività e accesso alle sezioni principali.
+- [Team](/it/team): Pagina di presentazione del team legale, con ruoli e organizzazione interna dello Studio.
+- [Profilo Luca Ferrini](/it/team/luca-ferrini): Profilo professionale dell’Avv. Luca Ferrini, con esperienza, specializzazioni e ambiti di attività.
+- [Profilo Giordana Pasini](/it/team/giordana-pasini): Biografia e ruolo dell’Avv. Giordana Pasini all’interno dello Studio.
+- [Profilo Vanessa Maraldi](/it/team/vanessa-maraldi): Biografia e responsabilità dell’Avv. Vanessa Maraldi e principali settori di intervento.
+- [Contatti](/it/contact): Pagina di contatto in italiano con modulo, recapiti e modalità per richiedere informazioni o fissare un appuntamento.
+- [Dove siamo](/it/where-we-are): Indirizzo dello Studio, mappa e indicazioni pratiche per raggiungere la sede.
+- [FAQ](/it/faq): Domande frequenti sui servizi offerti, il funzionamento dello Studio e le principali fasi del rapporto professionale. Contenuto opzionale che può essere omesso in caso di contesto limitato.
+
+## Optional
+
+English web pages
+
+- [Homepage](/en/): Main landing page with an overview of the firm, key value propositions, and navigation to all sections.
+- [Team overview](/en/team): Overview of the legal team, roles, and professional structure of the firm.
+- [Luca Ferrini profile](/en/team/luca-ferrini): Professional profile of Avv. Luca Ferrini, including experience and key practice areas.
+- [Giordana Pasini profile](/en/team/giordana-pasini): Profile of Avv. Giordana Pasini with background and responsibilities.
+- [Vanessa Maraldi profile](/en/team/vanessa-maraldi): Profile of Avv. Vanessa Maraldi with areas of work and role in the team.
+- [Contact](/en/contact): Contact page with form and details for enquiries, consultations, and appointments.
+- [Where we are](/en/where-we-are): Office address, map, and practical information on how to reach the firm.
+- [FAQ](/en/faq): Frequently asked questions explaining services, processes, and what clients can expect. Lower-priority context that can be skipped if space is limited.

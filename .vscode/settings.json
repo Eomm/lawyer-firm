@@ -48,5 +48,8 @@
   },
   "emmet.includeLanguages": {
     "astro": "html"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 }

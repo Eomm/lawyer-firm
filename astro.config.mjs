@@ -9,6 +9,9 @@ const site = process.env.WEBSITE_BUILD || 'http://localhost:4321';
 // eslint-disable-next-line no-undef
 const siteUrl = new URL(site);
 
+// eslint-disable-next-line no-undef
+const llmsTxtUrl = new URL('llms.txt', siteUrl).toString();
+
 // https://astro.build/config
 export default defineConfig({
   site,
@@ -16,6 +19,8 @@ export default defineConfig({
 
   integrations: [
     sitemap({
+      lastmod: new Date(),
+      customPages: [llmsTxtUrl],
       i18n: {
         defaultLocale: 'it',
         locales: {
