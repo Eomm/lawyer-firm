@@ -46,6 +46,7 @@ jobs:
         run: npm run build
         env:
           WEBSITE_BUILD: https://studiolegaleferrini.it
+          PUBLIC_GA_MEASUREMENT_ID: G-HEBGWTZKE1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -56,6 +57,7 @@ jobs:
         run: npm run build
         env:
           WEBSITE_BUILD: https://studiolegaleferrini.com
+          PUBLIC_GA_MEASUREMENT_ID: G-G36360CYVM
 
       - name: Upload FTP artifact
         uses: actions/upload-artifact@v4
