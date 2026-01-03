@@ -21,7 +21,7 @@ export const it = {
   // Homepage
   home: {
     title: 'Studio Legale Ferrini - Servizi Legali Professionali',
-    seo: "Avvocati penalisti esperti a Cesena e Forlì. Studio legale specializzato in diritto penale, reati stradali e diritto penale d'impresa con oltre 25 anni di esperienza.",
+    seo: "Avvocati penalisti Cesena e Forlì. Studio legale specializzato in diritto penale, reati stradali e diritto penale d'impresa con oltre 25 anni di esperienza.",
     description: 'Rappresentanza legale esperta a Cesena e Rimini. Specializzati in diritto penale da oltre 25 anni.',
     hero: {
       title: 'Diritto penale, il nostro lavoro da 25 anni',
